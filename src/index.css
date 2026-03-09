@@ -4,5 +4,6 @@
   --font-poppins: "Poppins", sans-serif;
 };
 :root {
-  --primary: 255 202 32;
+  --primary: #f2ca1c;
+  --secondary: #31468e;
 }

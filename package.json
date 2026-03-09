@@ -12,6 +12,7 @@
   "dependencies": {
     "@fontsource/poppins": "^5.2.7",
     "@tailwindcss/vite": "^4.2.1",
+    "clsx": "^2.1.1",
     "i18next": "^25.8.14",
     "lucide-react": "^0.576.0",
     "react": "^19.2.0",

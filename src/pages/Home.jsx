@@ -34,12 +34,12 @@ const Home = () => {
         Enjoy comfortable rides, professional drivers and affordable pricing.
       </p>
 
-   <div className="flex gap-4">
-  <button className="bg-yellow-500 text-black font-semibold px-6 py-3 rounded-lg transition duration-300 hover:bg-transparent hover:text-white border border-yellow-500 hover:border-white">
+  <div className="flex gap-4">
+  <button className="bg-[#31468e] text-white font-semibold px-6 py-3 rounded-lg transition duration-300 hover:bg-[#f2ca1c] hover:text-black  hover:border-white text-lg">
     Book Now
   </button>
 
-  <button className="border border-white px-6 py-3 rounded-lg font-semibold transition duration-300 hover:bg-yellow-500 hover:border-yellow-500 hover:text-black">
+  <button className="border border-white px-6 py-3 rounded-lg font-semibold transition duration-300 hover:bg-[#f2ca1c] hover:border-[#f2ca1c] hover:text-black text-lg">
     Learn More
   </button>
 </div>
@@ -68,11 +68,11 @@ const Home = () => {
         Enjoy comfortable rides, professional drivers and affordable pricing.
       </p>
 <div className="flex gap-4">
-  <button className="bg-yellow-500 text-black font-semibold px-6 py-3 rounded-lg transition duration-300 hover:bg-transparent hover:text-white border border-yellow-500 hover:border-white">
+  <button className="bg-[#31468e] text-white font-semibold px-6 py-3 rounded-lg transition duration-300 hover:bg-[#f2ca1c] hover:text-black  hover:border-white text-lg">
     Book Now
   </button>
 
-  <button className="border border-white px-6 py-3 rounded-lg font-semibold transition duration-300 hover:bg-yellow-500 hover:border-yellow-500 hover:text-black">
+  <button className="border border-white px-6 py-3 rounded-lg font-semibold transition duration-300 hover:bg-[#f2ca1c] hover:border-[#f2ca1c] hover:text-black text-lg">
     Learn More
   </button>
 </div>
@@ -100,13 +100,12 @@ const Home = () => {
    Booking your cab with us is quick, simple, and reliable.
 Enjoy safe rides, professional drivers, and a comfortable journey every time. 
       </p>
-
-     <div className="flex gap-4">
-  <button className="bg-yellow-500 text-black font-semibold px-6 py-3 rounded-lg transition duration-300 hover:bg-transparent hover:text-white border border-yellow-500 hover:border-white">
+<div className="flex gap-4">
+  <button className="bg-[#31468e] text-white font-semibold px-6 py-3 rounded-lg transition duration-300 hover:bg-[#f2ca1c] hover:text-black  hover:border-white text-lg">
     Book Now
   </button>
 
-  <button className="border border-white px-6 py-3 rounded-lg font-semibold transition duration-300 hover:bg-yellow-500 hover:border-yellow-500 hover:text-black">
+  <button className="border border-white px-6 py-3 rounded-lg font-semibold transition duration-300 hover:bg-[#f2ca1c] hover:border-[#f2ca1c] hover:text-black text-lg">
     Learn More
   </button>
 </div>
