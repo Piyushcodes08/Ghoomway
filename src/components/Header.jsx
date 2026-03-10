@@ -30,9 +30,9 @@ export default function Header() {
         scrolled ? "bg-white" : "bg-transparent"
       )}
     >
-      <div className="max-w-7xl mx-auto md:px-6 px-2 h-16 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto md:px-6 h-16 px-2 flex items-center justify-between">
         {/* Logo */}
-        <Link className=" w-25 md:w-35 h-auto object-cover flex items-center rounded-lg" to="/">
+        <Link className="md:w-25 w-20 h-auto object-cover flex items-center rounded-lg" to="/">
           <img src={logo} alt="logo" />
         </Link>
 
@@ -75,7 +75,8 @@ export default function Header() {
               "text-base transition-all duration-500 ease-in-out transform border-none rounded-2xl capitalize px-3 py-2 font-semibold bg-white text-black flex items-center gap-2 cursor-pointer z-50",
               {
                 "opacity-100 translate-y-0": scrolled,
-                "md:opacity-0 md:translate-y-0 pointer-events-none": !scrolled,
+                // Fix: Added md: to pointer-events-none so it remains clickable on mobile
+                "md:opacity-0 md:translate-y-4 translate-y-0 md:pointer-events-none": !scrolled,
               }
             )}
           >
@@ -110,8 +111,8 @@ export default function Header() {
         className={clsx(
           "fixed top-0 right-0 h-screen lg:w-3/5 w-full rounded-tl-4xl rounded-bl-4xl",
           {
-            "pointer-events-auto": scrolled && menuOpen,
-            "pointer-events-none": !(scrolled && menuOpen),
+            "pointer-events-auto": menuOpen,
+            "pointer-events-none": !menuOpen,
           }
         )}
       >
@@ -119,28 +120,32 @@ export default function Header() {
         <div
           className={clsx(
             "absolute top-0 right-0 w-full h-full bg-[#f2ca1c] transition-transform duration-700 ease-in-out rounded-tl-4xl rounded-bl-4xl",
-            { "translate-x-0": scrolled && menuOpen, "translate-x-full": !(scrolled && menuOpen) }
+            // Fix: Changed 'scrolled && menuOpen' to just 'menuOpen'
+            { "translate-x-0": menuOpen, "translate-x-full": !menuOpen }
           )}
         />
         {/* White Layer */}
         <div
           className={clsx(
             "absolute top-0 right-0 w-full h-full bg-white transition-transform duration-700 ease-in-out rounded-tl-4xl rounded-bl-4xl delay-150",
-            { "translate-x-0": scrolled && menuOpen, "translate-x-full": !(scrolled && menuOpen) }
+            // Fix: Changed 'scrolled && menuOpen' to just 'menuOpen'
+            { "translate-x-0": menuOpen, "translate-x-full": !menuOpen }
           )}
         />
         {/* Gray Layer */}
         <div
           className={clsx(
             "absolute top-0 right-0 w-full h-full bg-[#e3e1de] transition-transform duration-700 ease-in-out rounded-tl-4xl rounded-bl-4xl delay-300",
-            { "translate-x-0": scrolled && menuOpen, "translate-x-full": !(scrolled && menuOpen) }
+            // Fix: Changed 'scrolled && menuOpen' to just 'menuOpen'
+            { "translate-x-0": menuOpen, "translate-x-full": !menuOpen }
           )}
         >
           {/* Menu Content */}
           <ul
             className={clsx(
               "relative z-50 h-full flex flex-col justify-center text-black transition-opacity duration-500 text-center",
-              { "opacity-100": scrolled && menuOpen, "opacity-0": !(scrolled && menuOpen) }
+              // Fix: Changed 'scrolled && menuOpen' to just 'menuOpen'
+              { "opacity-100": menuOpen, "opacity-0": !menuOpen }
             )}
           >
             {["home", "about", "services", "contact"].map((item) => (

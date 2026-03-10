@@ -23,7 +23,7 @@ const Home = () => {
     className="relative h-screen w-full bg-cover bg-center"
   >
     {/* Content */}
-    <div className="absolute top-1/2 -translate-y-1/2 left-6 md:left-16 lg:left-24 text-white max-w-xl">
+    <div className="absolute top-1/2 -translate-y-1/2 left-6 md:left-16  text-white max-w-xl">
 
       <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
      From city travel to round trips, we’ve got you covered.
@@ -57,7 +57,7 @@ const Home = () => {
     className="relative h-screen w-full bg-cover bg-center"
   >
     {/* Content */}
-    <div className="absolute top-1/2 -translate-y-1/2 left-6 md:left-16 lg:left-24 text-white max-w-xl">
+    <div className="absolute top-1/2 -translate-y-1/2 left-6 md:left-16  text-white max-w-xl">
 
       <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
      Affordable prices, trusted drivers, and comfortable cars.
@@ -90,7 +90,7 @@ const Home = () => {
     className="relative h-screen w-full bg-cover bg-center"
   >
     {/* Content */}
-    <div className="absolute top-1/2 -translate-y-1/2 left-6 md:left-16 lg:left-24 text-white max-w-xl">
+    <div className="absolute top-1/2 -translate-y-1/2 left-6 md:left-16  text-white max-w-xl">
 
       <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
      Book your cab in seconds and enjoy stress-free rides.
