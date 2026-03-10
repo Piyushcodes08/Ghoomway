@@ -7,3 +7,6 @@
   --primary: #f2ca1c;
   --secondary: #31468e;
 }
+body{
+  overflow-x: hidden;
+}
