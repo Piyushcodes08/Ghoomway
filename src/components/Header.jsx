@@ -153,7 +153,7 @@ export default function Header() {
                 key={item}
                 className="border-b border-black/20 bg-gradient-to-l from-[#e3e1de] to-yellow-400 bg-[length:0%_100%] bg-right bg-no-repeat hover:bg-[length:100%_100%] transition-all duration-500 ease-in-out"
               >
-                <a className="block px-6 py-6 text-7xl font-semibold cursor-pointer capitalize">
+                <a className="block px-6 py-6 lg:text-8xl text-7xl font-semibold cursor-pointer capitalize">
                   {item}
                 </a>
               </li>

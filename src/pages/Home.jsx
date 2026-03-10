@@ -1,5 +1,8 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
+import heroImg1 from "../assets/jaselmair.jpg";
+import heroImg2 from "../assets/compas-bg.jpg";
+import heroImg3 from "../assets/cenematic-bg.jpg";
 
 const Home = () => {
   return (
@@ -15,13 +18,12 @@ const Home = () => {
     >
       {/* Slide 1 */}
     <SwiperSlide>
-  <div
-    style={{
-      backgroundImage:
-        "linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.5), rgba(0,0,0,0.1)), url('src/assets/jaselmair.jpg')",
-    }}
-    className="relative h-screen w-full bg-cover bg-center"
-  >
+ <div
+  style={{
+    backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(${heroImg1})`,
+  }}
+  className="relative h-screen w-full bg-cover bg-center"
+>
     {/* Content */}
     <div className="absolute top-1/2 -translate-y-1/2 left-6 md:left-16  text-white max-w-xl">
 
@@ -50,12 +52,11 @@ const Home = () => {
       {/* Slide 2 */}
    <SwiperSlide>
   <div
-    style={{
-      backgroundImage:
-        "linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.5), rgba(0,0,0,0.1)), url('src/assets/temple2.jpg')",
-    }}
-    className="relative h-screen w-full bg-cover bg-center"
-  >
+  style={{
+    backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(${heroImg2})`,
+  }}
+  className="relative h-screen w-full bg-cover bg-center"
+>
     {/* Content */}
     <div className="absolute top-1/2 -translate-y-1/2 left-6 md:left-16  text-white max-w-xl">
 
@@ -83,12 +84,11 @@ const Home = () => {
       {/* Slide 3 */}
       <SwiperSlide>
   <div
-    style={{
-      backgroundImage:
-        "linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.5), rgba(0,0,0,0.1)), url('src/assets/compas-bg.jpg')",
-    }}
-    className="relative h-screen w-full bg-cover bg-center"
-  >
+  style={{
+    backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(${heroImg3})`,
+  }}
+  className="relative h-screen w-full bg-cover bg-top"
+>
     {/* Content */}
     <div className="absolute top-1/2 -translate-y-1/2 left-6 md:left-16  text-white max-w-xl">
 
