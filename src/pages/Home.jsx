@@ -1,123 +1,28 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
-import heroImg1 from "../assets/jaselmair.jpg";
-import heroImg2 from "../assets/compas-bg.jpg";
-import heroImg3 from "../assets/temple2.jpg";
-import CabBooking from "../components/CabBooking";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import HeroSlider from "../components/HeroSlider";
+import CabBooking from "../components/CabBooking";
 
 const Home = () => {
-  const ref = useRef(null);
-  
-  // FIX: 'once: false' add kiya gaya hai taaki scroll up karne par element wapas niche jaye
-  const isInView = useInView(ref, { once: false, amount: 0.3 });
+  const triggerRef = useRef(null);
+
+  const isInView = useInView(triggerRef, {
+    once: false,
+    amount: 0.1,
+  });
 
   return (
-    <div>
-      <Swiper
-        modules={[Autoplay]}
-        autoplay={{
-          delay: 5000,
-          duration: 9000,
-          disableOnInteraction: false,
-        }}
-        loop={true}
-        className="w-full"
-      >
-        {/* Slide 1 */}
-        <SwiperSlide>
-          <div
-            style={{
-              backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.3), rgba(0,0,0,0.1)), url(${heroImg1})`,
-            }}
-            className="relative h-screen w-full bg-cover bg-center"
-          >
-            <div className="absolute top-1/2 -translate-y-1/2 left-6 md:left-16 text-white max-w-xl">
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
-                From city travel to round trips, we’ve got you covered.
-              </h1>
-              <p className="text-base md:text-base lg:text-base text-gray-200 mb-6">
-                Plan your perfect round trip with our reliable cab service.
-                Enjoy comfortable rides, professional drivers and affordable pricing.
-              </p>
-              <div className="flex gap-4">
-                <button className="bg-[#31468e] text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:bg-[#f2ca1c] hover:text-black text-lg">
-                  Book Now
-                </button>
-                <button className="border border-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-[#f2ca1c] hover:border-[#f2ca1c] hover:text-black text-lg">
-                  Learn More
-                </button>
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
+    <div className="bg-white">
+      <HeroSlider />
 
-        {/* Slide 2 */}
-        <SwiperSlide>
-          <div
-            style={{
-              backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.3), rgba(0,0,0,0.1)), url(${heroImg2})`,
-            }}
-            className="relative h-screen w-full bg-cover bg-center"
-          >
-            <div className="absolute top-1/2 -translate-y-1/2 left-6 md:left-16 text-white max-w-xl">
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
-                Affordable prices, trusted drivers, and comfortable cars.
-              </h1>
-              <p className="text-base md:text-base lg:text-base text-gray-200 mb-6">
-                Plan your perfect round trip with our reliable cab service.
-                Enjoy comfortable rides, professional drivers and affordable pricing.
-              </p>
-              <div className="flex gap-4">
-                <button className="bg-[#31468e] text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:bg-[#f2ca1c] hover:text-black text-lg">
-                  Book Now
-                </button>
-                <button className="border border-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-[#f2ca1c] hover:border-[#f2ca1c] hover:text-black text-lg">
-                  Learn More
-                </button>
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
+      {/* Separate trigger for animation */}
+      <div ref={triggerRef} className="h-[2px] w-full" />
 
-        {/* Slide 3 */}
-        <SwiperSlide>
-          <div
-            style={{
-              backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.3), rgba(0,0,0,0.1)), url(${heroImg3})`,
-            }}
-            className="relative h-screen w-full bg-cover bg-top"
-          >
-            <div className="absolute top-1/2 -translate-y-1/2 left-6 md:left-16 text-white max-w-xl">
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
-                Book your cab in seconds and enjoy stress-free rides.
-              </h1>
-              <p className="text-base md:text-base lg:text-base text-gray-200 mb-6">
-                Booking your cab with us is quick, simple, and reliable.
-                Enjoy safe rides, professional drivers, and a comfortable journey every time.
-              </p>
-              <div className="flex gap-4">
-                <button className="bg-[#31468e] text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:bg-[#f2ca1c] hover:text-black text-lg">
-                  Book Now
-                </button>
-                <button className="border border-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-[#f2ca1c] hover:border-[#f2ca1c] hover:text-black text-lg">
-                  Learn More
-                </button>
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
-      </Swiper>
-
-      {/* CabBooking Section with Scroll-linked Animation */}
       <motion.section
-        ref={ref}
-        className="w-full py-16 flex justify-center relative -mt-32 z-10"
-        initial={{ opacity: 0, y: 120 }}
-        // Scroll down par -10 (upar) jayega, scroll up par 120 (niche) jayega
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 120 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="relative z-10 -mt-32 flex w-full justify-center px-4 py-16 sm:px-6 lg:px-8"
+        initial={false}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0.5, y: 120 }}
+        transition={{ duration: 0.55, ease: "easeOut" }}
       >
         <CabBooking />
       </motion.section>
