@@ -7,8 +7,8 @@ const Home = () => {
   const triggerRef = useRef(null);
 
   const isInView = useInView(triggerRef, {
-    once: false,
-    amount: 0.1,
+    once: true,
+    amount: 0.4,
   });
 
   return (

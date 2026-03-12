@@ -32,7 +32,7 @@ const duplicatedFeatures = [...features, ...features];
 
 const Features = () => {
   return (
-    <section className="relative overflow-hidden bg-[#f8f9fc] py-24 md:py-32">
+    <section className="relative overflow-hidden bg-[#f8f9fc] py-12 md:py-24">
       {/* Premium Background Layers */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute left-[-120px] top-10 h-[320px] w-[320px] rounded-full bg-[#31468e]/15 blur-3xl" />
