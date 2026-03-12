@@ -37,7 +37,7 @@ const Home = () => {
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
                 From city travel to round trips, we’ve got you covered.
               </h1>
-              <p className="text-sm md:text-lg lg:text-xl text-gray-200 mb-6">
+              <p className="text-base md:text-base lg:text-base text-gray-200 mb-6">
                 Plan your perfect round trip with our reliable cab service.
                 Enjoy comfortable rides, professional drivers and affordable pricing.
               </p>
@@ -65,7 +65,7 @@ const Home = () => {
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
                 Affordable prices, trusted drivers, and comfortable cars.
               </h1>
-              <p className="text-sm md:text-lg lg:text-xl text-gray-200 mb-6">
+              <p className="text-base md:text-base lg:text-base text-gray-200 mb-6">
                 Plan your perfect round trip with our reliable cab service.
                 Enjoy comfortable rides, professional drivers and affordable pricing.
               </p>
@@ -93,7 +93,7 @@ const Home = () => {
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
                 Book your cab in seconds and enjoy stress-free rides.
               </h1>
-              <p className="text-sm md:text-lg lg:text-xl text-gray-200 mb-6">
+              <p className="text-base md:text-base lg:text-base text-gray-200 mb-6">
                 Booking your cab with us is quick, simple, and reliable.
                 Enjoy safe rides, professional drivers, and a comfortable journey every time.
               </p>

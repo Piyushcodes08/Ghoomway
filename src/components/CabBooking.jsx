@@ -1,132 +1,259 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { FiMapPin, FiSmartphone } from "react-icons/fi";
 import { IoIosArrowDown } from "react-icons/io";
+import { MdOutlineLocalTaxi } from "react-icons/md";
+import { LuPlaneTakeoff, LuMapPinned } from "react-icons/lu";
 
 export default function CabBooking() {
   const [activeTab, setActiveTab] = useState("Outstation");
-  const [tripType, setTripType] = useState("Local Rental");
+  const [tripType, setTripType] = useState("Round Trip");
   const [airportOption, setAirportOption] = useState("From Airport / To Airport");
   const [selectedAirport, setSelectedAirport] = useState("");
   const [mobile, setMobile] = useState("");
 
+  const tabs = ["Outstation", "Local / Airport"];
+
+  const outstationOptions = [
+    {
+      title: "Round Trip",
+      subtitle: "Perfect for return journeys with comfort and flexibility.",
+      icon: <LuMapPinned className="text-xl" />,
+    },
+    {
+      title: "One Way Trip",
+      subtitle: "Ideal for single route travel with transparent pricing.",
+      icon: <MdOutlineLocalTaxi className="text-xl" />,
+    },
+  ];
+
+  const localOptions = [
+    {
+      title: "Local Rental",
+      subtitle: "Flexible hours for city rides, meetings, and day travel.",
+      icon: <MdOutlineLocalTaxi className="text-xl" />,
+    },
+    {
+      title: "Airport Transfer",
+      subtitle: "Smooth airport pickups and drop-offs with reliable service.",
+      icon: <LuPlaneTakeoff className="text-xl" />,
+    },
+  ];
+
+  const currentOptions =
+    activeTab === "Outstation" ? outstationOptions : localOptions;
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20, scale: 0.95 }}
+      initial={{ opacity: 0, y: 24, scale: 0.96 }}
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
-      transition={{ duration: 0.7 }}
-      className="w-[90%] bg-white rounded-3xl shadow-xl p-6"
+      transition={{ duration: 0.7, ease: "easeOut" }}
+      className="relative w-full max-w-6xl overflow-hidden rounded-[32px] border border-white/50 bg-white/85 p-4 shadow-[0_25px_80px_rgba(15,23,42,0.14)] backdrop-blur-xl sm:p-6 md:p-8"
     >
-      {/* Heading */}
-      <div className="bg-[#f2ca1c] text-center py-3 rounded-xl font-semibold text-lg">
-        All India Cab Service
+      {/* Background Premium Glow */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute -left-16 top-0 h-40 w-40 rounded-full bg-[#31468e]/10 blur-3xl" />
+        <div className="absolute -right-10 bottom-0 h-44 w-44 rounded-full bg-[#f2ca1c]/20 blur-3xl" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.8),transparent_55%)]" />
       </div>
 
-      {/* Tabs */}
-      <div className="flex gap-4 mt-6">
-        {["Outstation", "Local / Airport"].map((tab) => (
-          <button
-            key={tab}
-            onClick={() => setActiveTab(tab)}
-            className={`flex-1 py-3 rounded-xl font-semibold transition-colors ${
-              activeTab === tab
-                ? "bg-[#f2ca1c] text-black"
-                : "bg-gray-200 text-gray-700"
-            }`}
-          >
-            {tab}
-          </button>
-        ))}
-      </div>
-
-      {/* Trip Type / Options */}
-      <div className="flex gap-4 mt-6">
-        {activeTab === "Outstation" ? (
-          ["Round Trip", "One Way Trip"].map((type) => (
-            <div
-              key={type}
-              onClick={() => setTripType(type)}
-              className={`flex items-center gap-2 px-4 py-3 rounded-xl w-full cursor-pointer transition-colors ${
-                tripType === type
-                  ? "bg-[#f2ca1c] text-white"
-                  : "bg-gray-100 text-black"
-              }`}
-            >
-              <div
-                className={`w-4 h-4 rounded-full border-2 ${
-                  tripType === type ? "bg-white border-white" : "border-black"
-                }`}
-              ></div>
-              {type}
-            </div>
-          ))
-        ) : (
-          ["Local Rental", "Airport Transfer"].map((type) => (
-            <div
-              key={type}
-              onClick={() => setTripType(type)}
-              className={`flex items-center gap-2 px-4 py-3 rounded-xl w-full cursor-pointer transition-colors ${
-                tripType === type
-                  ? "bg-[#f2ca1c] text-black font-semibold"
-                  : "bg-gray-100 text-gray-700"
-              }`}
-            >
-              <div
-                className={`w-4 h-4 rounded-full border-2 ${
-                  tripType === type ? "bg-black border-black" : "border-gray-400"
-                }`}
-              ></div>
-              {type}
-            </div>
-          ))
-        )}
-      </div>
-
-      {/* Local / Airport Inputs */}
-      {activeTab === "Local / Airport" && (
-        <div className="mt-6 flex flex-col gap-4">
-          {/* Airport Option */}
-          <div className="flex items-center justify-between bg-gray-100 px-4 py-3 rounded-xl cursor-pointer w-full">
-            {airportOption}
-            <IoIosArrowDown size={20} />
+      <div className="relative z-10">
+        {/* Header */}
+        <div className="mb-6 rounded-[24px] border border-[#31468e]/10 bg-gradient-to-r from-[#31468e] via-[#3d56aa] to-[#31468e] p-[1px] shadow-[0_12px_32px_rgba(49,70,142,0.24)]">
+          <div className="rounded-[23px] bg-[linear-gradient(135deg,#31468e_0%,#3d56aa_100%)] px-5 py-5 text-center text-white">
+            <p className="mb-1 text-xs font-semibold uppercase tracking-[0.25em] text-white/75">
+              Premium Cab Booking
+            </p>
+            <h2 className="text-xl font-bold sm:text-2xl">
+              All India Cab Service
+            </h2>
+            <p className="mt-1 text-sm text-white/80">
+              Luxury, comfort, and reliability for every journey
+            </p>
           </div>
+        </div>
 
-          {/* Airport Selection */}
-          <div className="flex items-center bg-gray-100 px-4 py-3 rounded-xl cursor-pointer w-full">
-            <FiMapPin size={20} className="text-gray-500 mr-2" />
+        {/* Tabs */}
+        <div className="mb-6 rounded-2xl border border-slate-200/70 bg-slate-100/70 p-1.5">
+          <div className="grid grid-cols-2 gap-2">
+            {tabs.map((tab) => {
+              const isActive = activeTab === tab;
+              return (
+                <button
+                  key={tab}
+                  onClick={() => {
+                    setActiveTab(tab);
+                    setTripType(
+                      tab === "Outstation" ? "Round Trip" : "Local Rental"
+                    );
+                  }}
+                  className={`relative overflow-hidden rounded-xl px-4 py-3 text-sm font-semibold transition-all duration-300 sm:text-base ${
+                    isActive
+                      ? "bg-[#31468e] text-white shadow-[0_10px_24px_rgba(49,70,142,0.28)]"
+                      : "bg-transparent text-slate-600 hover:bg-white hover:text-[#31468e]"
+                  }`}
+                >
+                  <span className="relative z-10">{tab}</span>
+                  {isActive && (
+                    <motion.div
+                      layoutId="tab-pill"
+                      className="absolute inset-0 bg-[#31468e]"
+                      transition={{ type: "spring", stiffness: 280, damping: 24 }}
+                    />
+                  )}
+                  <span className="relative z-10">{tab}</span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Options */}
+        <div className="mb-6 grid grid-cols-1 gap-4 md:grid-cols-2">
+          {currentOptions.map((type) => {
+            const isSelected = tripType === type.title;
+            return (
+              <motion.button
+                key={type.title}
+                whileHover={{ y: -4 }}
+                whileTap={{ scale: 0.985 }}
+                onClick={() => setTripType(type.title)}
+                className={`group relative overflow-hidden rounded-[24px] border p-5 text-left transition-all duration-300 ${
+                  isSelected
+                    ? "border-[#31468e]/20 bg-gradient-to-br from-[#31468e] to-[#425cb8] text-white shadow-[0_18px_40px_rgba(49,70,142,0.26)]"
+                    : "border-slate-200 bg-white/90 text-slate-800 hover:border-[#31468e]/20 hover:shadow-[0_15px_35px_rgba(15,23,42,0.08)]"
+                }`}
+              >
+                <div className="absolute right-0 top-0 h-28 w-28 rounded-full bg-[#f2ca1c]/10 blur-2xl" />
+
+                <div className="relative z-10 flex items-start gap-4">
+                  <div
+                    className={`flex h-12 w-12 items-center justify-center rounded-2xl border transition-all ${
+                      isSelected
+                        ? "border-white/20 bg-white/10 text-white"
+                        : "border-[#31468e]/10 bg-[#31468e]/5 text-[#31468e]"
+                    }`}
+                  >
+                    {type.icon}
+                  </div>
+
+                  <div className="flex-1">
+                    <div className="mb-2 flex items-center justify-between gap-3">
+                      <h3 className="text-base font-semibold sm:text-lg">
+                        {type.title}
+                      </h3>
+
+                      <div
+                        className={`flex h-5 w-5 items-center justify-center rounded-full border-2 ${
+                          isSelected
+                            ? "border-white bg-white"
+                            : "border-slate-300 bg-transparent"
+                        }`}
+                      >
+                        {isSelected && (
+                          <div className="h-2.5 w-2.5 rounded-full bg-[#31468e]" />
+                        )}
+                      </div>
+                    </div>
+
+                    <p
+                      className={`text-sm leading-6 ${
+                        isSelected ? "text-white/80" : "text-slate-500"
+                      }`}
+                    >
+                      {type.subtitle}
+                    </p>
+                  </div>
+                </div>
+              </motion.button>
+            );
+          })}
+        </div>
+
+        {/* Conditional Area */}
+        <AnimatePresence mode="wait">
+          {activeTab === "Local / Airport" && (
+            <motion.div
+              key="airport-fields"
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -12 }}
+              transition={{ duration: 0.35 }}
+              className="mb-6 grid grid-cols-1 gap-4 md:grid-cols-2"
+            >
+              {/* Airport Option */}
+              <div className="group rounded-2xl border border-slate-200 bg-white/90 p-4 shadow-sm transition-all hover:border-[#31468e]/20 hover:shadow-md">
+                <label className="mb-2 block text-sm font-medium text-slate-500">
+                  Airport Transfer Type
+                </label>
+                <button className="flex w-full items-center justify-between rounded-xl bg-slate-50 px-4 py-3 text-left text-sm font-medium text-slate-700 outline-none transition-all hover:bg-slate-100">
+                  <span>{airportOption}</span>
+                  <IoIosArrowDown size={18} className="text-slate-500" />
+                </button>
+              </div>
+
+              {/* Airport Selection */}
+              <div className="group rounded-2xl border border-slate-200 bg-white/90 p-4 shadow-sm transition-all hover:border-[#31468e]/20 hover:shadow-md">
+                <label className="mb-2 block text-sm font-medium text-slate-500">
+                  Airport / Pickup Location
+                </label>
+                <div className="flex items-center rounded-xl bg-slate-50 px-4 py-3 transition-all focus-within:ring-2 focus-within:ring-[#31468e]/20">
+                  <FiMapPin size={18} className="mr-3 text-[#31468e]" />
+                  <input
+                    type="text"
+                    placeholder="Select Airport"
+                    value={selectedAirport}
+                    onChange={(e) => setSelectedAirport(e.target.value)}
+                    className="w-full bg-transparent text-sm text-slate-700 outline-none placeholder:text-slate-400"
+                  />
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Mobile Number */}
+        <div className="mb-6 rounded-[24px] border border-slate-200 bg-white/95 p-4 shadow-sm transition-all hover:border-[#31468e]/20 hover:shadow-md">
+          <label className="mb-2 block text-sm font-medium text-slate-500">
+            Mobile Number
+          </label>
+
+          <div className="flex items-center rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 focus-within:border-[#31468e]/20 focus-within:bg-white focus-within:ring-2 focus-within:ring-[#31468e]/10">
+            <span className="mr-3 rounded-full bg-[#31468e]/8 px-3 py-1 text-sm font-semibold text-[#31468e]">
+              +91
+            </span>
+            <FiSmartphone className="mr-3 text-[#31468e]" size={18} />
             <input
               type="text"
-              placeholder="Select Airport"
-              value={selectedAirport}
-              onChange={(e) => setSelectedAirport(e.target.value)}
-              className="bg-transparent outline-none w-full"
+              placeholder="Enter mobile number"
+              value={mobile}
+              onChange={(e) => setMobile(e.target.value)}
+              className="w-full bg-transparent text-sm text-slate-700 outline-none placeholder:text-slate-400"
             />
           </div>
         </div>
-      )}
 
-      {/* Mobile Number */}
-      <div className="flex items-center mt-4 bg-gray-100 p-4 rounded-xl w-full">
-        <span className="mr-2">+91</span>
-        <FiSmartphone className="text-gray-500 mr-2" />
-        <input
-          type="text"
-          placeholder="Enter mobile number"
-          value={mobile}
-          onChange={(e) => setMobile(e.target.value)}
-          className="bg-transparent outline-none w-full"
-        />
+        {/* CTA */}
+        <motion.button
+          whileHover={{ scale: 1.015, y: -2 }}
+          whileTap={{ scale: 0.985 }}
+          className="group relative w-full overflow-hidden rounded-[22px] bg-[linear-gradient(135deg,#31468e_0%,#3f58b2_60%,#31468e_100%)] px-6 py-4 text-base font-semibold text-white shadow-[0_18px_40px_rgba(49,70,142,0.35)] transition-all sm:text-lg"
+          onClick={() => alert("Booking clicked!")}
+        >
+          <span className="absolute inset-0 bg-[linear-gradient(120deg,transparent,rgba(255,255,255,0.24),transparent)] translate-x-[-120%] group-hover:translate-x-[120%] transition-transform duration-1000" />
+          <span className="relative z-10 flex items-center justify-center gap-3">
+            Check Price & Book Cab
+            <span className="inline-flex h-2.5 w-2.5 rounded-full bg-[#f2ca1c]" />
+          </span>
+        </motion.button>
+
+        {/* Bottom Note */}
+        <div className="mt-5 flex items-center justify-center gap-3 text-center text-xs text-slate-500 sm:text-sm">
+          <div className="h-px w-10 bg-slate-200 sm:w-16" />
+          <p>Fast booking • Trusted drivers • Transparent pricing</p>
+          <div className="h-px w-10 bg-slate-200 sm:w-16" />
+        </div>
       </div>
-
-      {/* Submit Button */}
-      <motion.button
-        whileHover={{ scale: 1.03 }}
-        whileTap={{ scale: 0.95 }}
-        className="w-full mt-6 bg-[#f2ca1c] py-4 rounded-xl font-semibold text-lg"
-        onClick={() => alert("Booking clicked!")}
-      >
-        Check Price & Book Cab
-      </motion.button>
     </motion.div>
   );
 }
