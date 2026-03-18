@@ -4,6 +4,7 @@ import clsx from "clsx";
 import flag from "../assets/Flag_of_India.svg.png";
 import logo from "../assets/logo.png";
 import { Plus } from "lucide-react";
+import { navLinks } from "../data";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -46,7 +47,7 @@ export default function Header() {
             }
           )}
         >
-          {["home", "about", "destinations", "gallery", "services", "contact"].map((item) => (
+          {navLinks.map((item) => (
             <a
               key={item}
               href={item === "home" ? "/" : `#${item}`}
@@ -150,10 +151,10 @@ export default function Header() {
             )}
           >
             <div className="my-auto w-full">
-            {["home", "about", "destinations", "gallery", "services", "contact"].map((item) => (
+            {navLinks.map((item, index) => (
               <li
                 key={item}
-                className="border-b border-black/20 bg-gradient-to-l from-[#e3e1de] to-yellow-400 bg-[length:0%_100%] bg-right bg-no-repeat hover:bg-[length:100%_100%] transition-all duration-500 ease-in-out"
+                className="overflow-hidden mb-2 sm:mb-4 lg:mb-6 bg-gradient-to-l from-[#e3e1de] to-yellow-400 bg-[length:0%_100%] bg-right bg-no-repeat hover:bg-[length:100%_100%] transition-all duration-500 ease-in-out"
               >
                 <a
                   href={item === "home" ? "/" : `#${item}`}

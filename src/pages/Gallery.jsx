@@ -1,26 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-
-// Assets
-import img1 from "../assets/jaselmair.jpg";
-import img2 from "../assets/temple.jpg";
-import img3 from "../assets/round-trip.jpg";
-import img4 from "../assets/solo-trip.jpg";
-import img5 from "../assets/temple2.jpg";
-import img6 from "../assets/taxi.jpg";
-import img7 from "../assets/aitport.jpg";
-import img8 from "../assets/service (1).jpg";
-
-const galleryImages = [
-  { id: 1, src: img1, title: "Golden Sands", category: "Nature" },
-  { id: 2, src: img2, title: "Ancient Spirits", category: "Heritage" },
-  { id: 3, src: img3, title: "Open Roads", category: "Adventure" },
-  { id: 4, src: img4, title: "Solo Explorer", category: "Personal" },
-  { id: 5, src: img5, title: "Temple Peace", category: "Heritage" },
-  { id: 6, src: img6, title: "Smart City", category: "Business" },
-  { id: 7, src: img7, title: "Travel High", category: "Airport" },
-  { id: 8, src: img8, title: "Premium Service", category: "Luxury" },
-];
+import { galleryImages } from "../data";
 
 const Gallery = () => {
   return (
@@ -33,11 +13,11 @@ const Gallery = () => {
            transition={{ duration: 0.8 }}
            className="text-center mb-16"
         >
-          <span className="text-indigo-400 font-bold tracking-widest uppercase text-sm mb-4 block">
+          <span className="text-[#f2ca1c] font-bold tracking-widest uppercase text-sm mb-4 block">
             Our Journey In Pictures
           </span>
           <h2 className="text-4xl md:text-5xl font-black text-white leading-tight">
-            The <span className="text-indigo-500 underline decoration-indigo-500 underline-offset-8">Ghoomway</span> Gallery
+            The <span className="text-[#31468e] underline decoration-[#31468e] underline-offset-8">Ghoomway</span> Gallery
           </h2>
           <p className="max-w-2xl mx-auto mt-8 text-slate-400 text-lg leading-relaxed">
             Capturing the essence of travel, one mile at a time. Explore our collection of premium travel experiences and happy moments.
@@ -61,8 +41,8 @@ const Gallery = () => {
               />
               
               {/* Overlay */}
-              <div className="absolute inset-0 bg-indigo-900/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                <span className="text-[10px] uppercase font-bold text-indigo-200 mb-1 tracking-widest">{image.category}</span>
+              <div className="absolute inset-0 bg-[#31468e]/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                <span className="text-[10px] uppercase font-bold text-[#f2ca1c] mb-1 tracking-widest">{image.category}</span>
                 <h4 className="text-xl font-bold text-white mb-2">{image.title}</h4>
                 <div className="w-8 h-1 bg-white rounded-full group-hover:w-full transition-all duration-500 delay-100" />
               </div>
@@ -83,13 +63,13 @@ const Gallery = () => {
            whileInView={{ opacity: 1, y: 0 }}
            viewport={{ once: true }}
            transition={{ duration: 0.8, delay: 0.5 }}
-           className="mt-16 md:mt-24 flex flex-col md:flex-row items-center justify-between p-6 md:p-10 rounded-[2rem] bg-indigo-600 shadow-xl shadow-indigo-400/20 text-center md:text-left"
+           className="mt-16 md:mt-24 flex flex-col md:flex-row items-center justify-between p-6 md:p-10 rounded-[2rem] bg-gradient-to-r from-[#31468e] to-[#425cb8] shadow-xl shadow-[#31468e]/20 text-center md:text-left"
         >
           <div className="mb-6 md:mb-0">
              <h4 className="text-2xl font-bold text-white mb-2">Want to see more of our journeys?</h4>
-             <p className="text-indigo-100">Follow our social media channels for daily travel inspiration.</p>
+             <p className="text-slate-200">Follow our social media channels for daily travel inspiration.</p>
           </div>
-          <button className="bg-white text-indigo-600 px-8 py-4 rounded-2xl font-bold hover:bg-slate-900 hover:text-white transition-all transform hover:scale-105">
+          <button className="bg-[#f2ca1c] text-slate-900 px-8 py-4 rounded-2xl font-black tracking-wide hover:bg-white transition-all transform hover:scale-105 shadow-md">
             Follow @Ghoomway
           </button>
         </motion.div>

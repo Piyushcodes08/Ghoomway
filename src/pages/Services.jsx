@@ -1,51 +1,5 @@
 import { motion } from "framer-motion";
-import { Car, Plane, Map, ShieldCheck, Briefcase, Sparkles } from "lucide-react";
-
-import imgCity from "../assets/taxi.jpg";
-import imgAirport from "../assets/aitport.jpg";
-import imgOutstation from "../assets/round-trip.jpg";
-import imgLuxury from "../assets/service (1).jpg";
-import imgCorporate from "../assets/solo-trip.jpg";
-import imgHeritage from "../assets/temple2.jpg";
-
-const services = [
-  {
-    title: "City Rides",
-    image: imgCity,
-    icon: Car,
-    buttonColor: "hover:bg-indigo-600",
-  },
-  {
-    title: "Airport Transfers",
-    image: imgAirport,
-    icon: Plane,
-    buttonColor: "hover:bg-sky-500",
-  },
-  {
-    title: "Outstation Trips",
-    image: imgOutstation,
-    icon: Map,
-    buttonColor: "hover:bg-emerald-500",
-  },
-  {
-    title: "Corporate Travel",
-    image: imgCorporate,
-    icon: Briefcase,
-    buttonColor: "hover:bg-slate-700",
-  },
-  {
-    title: "Luxury Rentals",
-    image: imgLuxury,
-    icon: Sparkles,
-    buttonColor: "hover:bg-amber-500",
-  },
-  {
-    title: "Heritage Tours",
-    image: imgHeritage,
-    icon: ShieldCheck,
-    buttonColor: "hover:bg-rose-500",
-  },
-];
+import { servicesData } from "../data";
 
 const cardVariants = {
   hidden: { opacity: 0, y: 40 },
@@ -96,7 +50,7 @@ export default function Services() {
 
         {/* Grid */}
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
-          {services.map((service, index) => (
+          {servicesData.map((service, index) => (
             <motion.div
               key={service.title}
               custom={index}

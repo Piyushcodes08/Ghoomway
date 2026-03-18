@@ -2,33 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MapPin, Smartphone, Calendar, Clock, Users, Car, Map, Plane, Navigation, ChevronDown } from "lucide-react";
 
-const tabs = ["Outstation", "Local / Airport"];
-
-const outstationOptions = [
-  {
-    title: "Round Trip",
-    subtitle: "Perfect for return journeys with comfort and flexibility.",
-    icon: <Map className="text-xl" />,
-  },
-  {
-    title: "One Way Trip",
-    subtitle: "Ideal for single route travel with transparent pricing.",
-    icon: <Navigation className="text-xl" />,
-  },
-];
-
-const localOptions = [
-  {
-    title: "Local Rental",
-    subtitle: "Flexible hours for city rides, meetings, and day travel.",
-    icon: <Car className="text-xl" />,
-  },
-  {
-    title: "Airport Transfer",
-    subtitle: "Smooth airport pickups and drop-offs with reliable service.",
-    icon: <Plane className="text-xl" />,
-  },
-];
+import { bookingTabs as tabs, outstationOptions, localOptions } from "../data";
 
 export default function CabBooking() {
   const [activeTab, setActiveTab] = useState("Outstation");

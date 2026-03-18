@@ -1,33 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { 
-  Facebook, 
-  Instagram, 
-  Twitter, 
-  Youtube, 
-  Mail, 
-  Phone, 
-  MapPin, 
   ArrowRight,
   Heart
 } from "lucide-react";
+import { footerQuickLinks, footerSocialLinks } from "../data";
 
 const Footer = () => {
-  const quickLinks = [
-    { name: "Home", href: "#home" },
-    { name: "About Us", href: "#about" },
-    { name: "Destinations", href: "#destinations" },
-    { name: "Our Services", href: "#services" },
-    { name: "Contact", href: "#contact" },
-  ];
-
-  const socialLinks = [
-    { icon: Facebook, href: "#", color: "hover:text-blue-500" },
-    { icon: Instagram, href: "#", color: "hover:text-pink-500" },
-    { icon: Twitter, href: "#", color: "hover:text-sky-400" },
-    { icon: Youtube, href: "#", color: "hover:text-red-500" },
-  ];
-
   return (
     <footer className="bg-slate-900 border-t border-slate-800 pt-12 md:pt-20 pb-10 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
@@ -40,16 +19,16 @@ const Footer = () => {
               viewport={{ once: true }}
               className="flex items-center gap-2"
             >
-              <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-900/40">
+              <div className="w-10 h-10 bg-[#31468e] rounded-xl flex items-center justify-center shadow-lg shadow-[#31468e]/40">
                 <span className="text-white font-black text-xl">G</span>
               </div>
-              <h2 className="text-2xl font-black text-white tracking-tighter">GHOOM<span className="text-indigo-500">WAY</span></h2>
+              <h2 className="text-2xl font-black text-white tracking-tighter">GHOOM<span className="text-[#f2ca1c]">WAY</span></h2>
             </motion.div>
             <p className="text-slate-400 leading-relaxed text-sm">
               Experience the soul of India through our premium travel services. From the deserts of Rajasthan to the bustling streets of Mumbai, we craft stories that last a lifetime.
             </p>
             <div className="flex gap-4">
-              {socialLinks.map((social, index) => (
+              {footerSocialLinks.map((social, index) => (
                 <motion.a
                   key={index}
                   href={social.href}
@@ -66,7 +45,7 @@ const Footer = () => {
           <div className="space-y-6">
             <h3 className="text-lg font-bold text-white tracking-tight">Quick Links</h3>
             <ul className="space-y-4">
-              {quickLinks.map((link, index) => (
+              {footerQuickLinks.map((link, index) => (
                 <li key={index}>
                   <a 
                     href={link.href} 
@@ -85,8 +64,8 @@ const Footer = () => {
             <h3 className="text-lg font-bold text-white tracking-tight">Get in Touch</h3>
             <ul className="space-y-4 pt-1">
               <li className="flex items-start gap-4">
-                <div className="w-8 h-8 rounded-lg bg-indigo-600/10 flex items-center justify-center shrink-0">
-                  <Phone size={16} className="text-indigo-400" />
+                <div className="w-8 h-8 rounded-lg bg-[#31468e]/20 flex items-center justify-center shrink-0">
+                  <span className="text-[#f2ca1c]">📞</span>
                 </div>
                 <div>
                   <p className="text-[10px] uppercase font-black text-slate-500 tracking-widest mb-0.5">Call Support</p>
@@ -94,8 +73,8 @@ const Footer = () => {
                 </div>
               </li>
               <li className="flex items-start gap-4">
-                <div className="w-8 h-8 rounded-lg bg-indigo-600/10 flex items-center justify-center shrink-0">
-                  <Mail size={16} className="text-indigo-400" />
+                <div className="w-8 h-8 rounded-lg bg-[#31468e]/20 flex items-center justify-center shrink-0">
+                  <span className="text-[#f2ca1c]">✉️</span>
                 </div>
                 <div>
                   <p className="text-[10px] uppercase font-black text-slate-500 tracking-widest mb-0.5">Email Us</p>
@@ -103,8 +82,8 @@ const Footer = () => {
                 </div>
               </li>
               <li className="flex items-start gap-4">
-                <div className="w-8 h-8 rounded-lg bg-indigo-600/10 flex items-center justify-center shrink-0">
-                  <MapPin size={16} className="text-indigo-400" />
+                <div className="w-8 h-8 rounded-lg bg-[#31468e]/20 flex items-center justify-center shrink-0">
+                  <span className="text-[#f2ca1c]">📍</span>
                 </div>
                 <div>
                   <p className="text-[10px] uppercase font-black text-slate-500 tracking-widest mb-0.5">Office Address</p>
@@ -124,9 +103,9 @@ const Footer = () => {
               <input 
                 type="email" 
                 placeholder="Your email address" 
-                className="w-full bg-slate-800 border border-slate-700 rounded-xl py-3.5 pl-4 pr-12 text-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all font-medium"
+                className="w-full bg-slate-800 border border-slate-700 rounded-xl py-3.5 pl-4 pr-12 text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#f2ca1c] transition-all font-medium"
               />
-              <button className="absolute right-2 top-2 w-9 h-9 bg-indigo-600 hover:bg-indigo-700 rounded-lg flex items-center justify-center text-white transition-colors shadow-lg shadow-indigo-900/20">
+              <button className="absolute right-2 top-2 w-9 h-9 bg-[#31468e] hover:bg-[#253670] rounded-lg flex items-center justify-center text-white transition-colors shadow-lg shadow-[#31468e]/20">
                 <ArrowRight size={18} />
               </button>
             </form>
