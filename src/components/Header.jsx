@@ -144,11 +144,12 @@ export default function Header() {
           {/* Menu Content */}
           <ul
             className={clsx(
-              "relative z-50 h-full flex flex-col justify-center text-black transition-opacity duration-500 text-center",
+              "relative z-50 h-full w-full flex flex-col items-center justify-start overflow-y-auto overflow-x-hidden text-black transition-opacity duration-500 text-center pt-24 pb-12 lg:py-24 [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-black/10 [&::-webkit-scrollbar-thumb]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-black/20",
               // Fix: Changed 'scrolled && menuOpen' to just 'menuOpen'
               { "opacity-100": menuOpen, "opacity-0": !menuOpen }
             )}
           >
+            <div className="my-auto w-full">
             {["home", "about", "destinations", "gallery", "services", "contact"].map((item) => (
               <li
                 key={item}
@@ -157,12 +158,13 @@ export default function Header() {
                 <a
                   href={item === "home" ? "/" : `#${item}`}
                   onClick={() => setMenuOpen(false)}
-                  className="block px-6 py-6 lg:text-8xl text-7xl font-semibold cursor-pointer capitalize"
+                  className="block px-6 py-4 lg:py-4 2xl:py-6 text-[2.5rem] sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-semibold cursor-pointer capitalize leading-tight"
                 >
                   {item}
                 </a>
               </li>
             ))}
+            </div>
           </ul>
         </div>
       </div>

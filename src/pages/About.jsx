@@ -21,7 +21,7 @@ const About = () => {
       title: "Reliability",
       description: "Our fleet and drivers are punctual and professionally trained for your peace of mind.",
     },
-  
+
   ];
 
   return (
@@ -53,7 +53,7 @@ const About = () => {
               </div>
             </div>
             {/* Decorative frame */}
-            <div className="absolute -bottom-6 -right-6 w-full h-full border-2 border-indigo-600 rounded-2xl -z-10" />
+            <div className="absolute -bottom-6 -right-6 w-full h-full border-2 border-[#f2ca1c] rounded-2xl -z-10 bg-[#f2ca1c]" />
           </motion.div>
 
           {/* Content Section */}

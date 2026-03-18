@@ -139,7 +139,7 @@ const CarGame = () => {
     return (
         <div className="relative w-full h-[400px] bg-slate-900 rounded-3xl overflow-hidden shadow-2xl border-4 border-slate-800">
             {!gameStarted && !gameOver && (
-                <div className="absolute inset-0 flex flex-col items-center justify-center bg-slate-900/80 backdrop-blur-sm z-20">
+                <div className="absolute inset-0 rounded-3xl flex flex-col items-center justify-center bg-slate-900/80 backdrop-blur-sm z-20">
                     <h3 className="text-3xl font-black text-white mb-6 tracking-tighter uppercase">Speed Driver</h3>
                     <button 
                         onClick={() => setGameStarted(true)}
@@ -152,7 +152,7 @@ const CarGame = () => {
             )}
 
             {gameOver && (
-                <div className="absolute inset-0 flex flex-col items-center justify-center bg-red-950/90 backdrop-blur-md z-30">
+                <div className="absolute rounded-3xl inset-0 flex flex-col items-center justify-center bg-red-950/90 backdrop-blur-md z-30">
                     <h3 className="text-4xl font-black text-white mb-2 tracking-tighter">CRASHED!</h3>
                     <p className="text-red-300 font-bold mb-8 uppercase tracking-widest">Final Score: {score}</p>
                     <button 
