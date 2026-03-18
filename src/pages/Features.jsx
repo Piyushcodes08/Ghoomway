@@ -64,7 +64,7 @@ const Features = () => {
             </span>
           </h2>
 
-          <p className="mx-auto mt-6 max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">
+          <p className="mx-auto mt-6 max-w-3xl text-base leading-8 text-slate-600 sm:text-base">
             Designed with elegance, flexibility, and trust at its core, GhoomWay
             delivers a premium booking experience that feels seamless from the
             first search to the final destination.
@@ -74,8 +74,8 @@ const Features = () => {
         {/* Marquee Wrapper */}
         <div className="group relative">
           {/* Edge fade */}
-          <div className="pointer-events-none absolute left-0 top-0 z-20 h-full w-20 bg-gradient-to-r from-[#f8f9fc] via-[#f8f9fc]/95 to-transparent md:w-32" />
-          <div className="pointer-events-none absolute right-0 top-0 z-20 h-full w-20 bg-gradient-to-l from-[#f8f9fc] via-[#f8f9fc]/95 to-transparent md:w-32" />
+          <div className="pointer-events-none absolute left-0 top-0 z-20 h-full w-20 md:w-32" />
+          <div className="pointer-events-none absolute right-0 top-0 z-20 h-full w-20  md:w-32" />
 
           <div className="overflow-hidden">
             <motion.div

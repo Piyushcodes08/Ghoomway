@@ -46,13 +46,14 @@ export default function Header() {
             }
           )}
         >
-          {["home", "about", "services", "contact"].map((item) => (
-            <Link
+          {["home", "about", "destinations", "gallery", "services", "contact"].map((item) => (
+            <a
               key={item}
-              className="text-base uppercase text-white font-semibold hover:text-[#f2ca1c]"
+              href={item === "home" ? "/" : `#${item}`}
+              className="text-base uppercase text-white font-semibold hover:text-[#f2ca1c] cursor-pointer"
             >
               {item}
-            </Link>
+            </a>
           ))}
         </nav>
 
@@ -148,12 +149,16 @@ export default function Header() {
               { "opacity-100": menuOpen, "opacity-0": !menuOpen }
             )}
           >
-            {["home", "about", "services", "contact"].map((item) => (
+            {["home", "about", "destinations", "gallery", "services", "contact"].map((item) => (
               <li
                 key={item}
                 className="border-b border-black/20 bg-gradient-to-l from-[#e3e1de] to-yellow-400 bg-[length:0%_100%] bg-right bg-no-repeat hover:bg-[length:100%_100%] transition-all duration-500 ease-in-out"
               >
-                <a className="block px-6 py-6 lg:text-8xl text-7xl font-semibold cursor-pointer capitalize">
+                <a
+                  href={item === "home" ? "/" : `#${item}`}
+                  onClick={() => setMenuOpen(false)}
+                  className="block px-6 py-6 lg:text-8xl text-7xl font-semibold cursor-pointer capitalize"
+                >
                   {item}
                 </a>
               </li>
