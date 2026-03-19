@@ -1,114 +1,83 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
-import { MapPin, Star, ArrowRight } from "lucide-react";
-import { motion } from "framer-motion";
+import { Pagination } from "swiper/modules";
+import { MapPin, ArrowRight } from "lucide-react";
 import { destinationsData } from "../data";
 
 import "swiper/css";
 import "swiper/css/pagination";
-import "swiper/css/navigation";
-
 
 const Destinations = () => {
   return (
     <section id="destinations" className="py-12 md:py-24 bg-slate-50 overflow-hidden">
-      <div className="w-full max-w-7xl mx-auto px-[15px] md:px-6">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="max-w-2xl"
-          >
-            <span className="text-[#31468e] font-bold tracking-widest uppercase text-sm mb-4 block">
-              Explore the World
-            </span>
-            <h2 className="text-4xl md:text-5xl font-black text-slate-900 leading-tight">
-              Top <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#31468e] to-[#425cb8]">Destinations</span> For Your Next Journey
-            </h2>
-          </motion.div>
-          
-          <motion.button
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="flex items-center gap-2 text-slate-900 font-bold hover:text-[#31468e] transition-colors group"
-          >
-            View All Destinations <ArrowRight className="group-hover:translate-x-1 transition-transform" />
-          </motion.button>
+      <div className="w-full max-w-7xl mx-auto px-4 md:px-6">
+        
+        {/* Header - Static for Performance */}
+        <div className="mb-10">
+          <span className="text-[#31468e] font-bold tracking-widest uppercase text-[10px] mb-2 block">Premium Travel</span>
+          <h2 className="text-4xl md:text-5xl font-black text-slate-900">
+            Top <span className="text-[#31468e]">Destinations</span>
+          </h2>
         </div>
 
         <Swiper
-          modules={[Autoplay, Pagination, Navigation]}
-          spaceBetween={15}
+          modules={[Pagination]}
+          spaceBetween={20}
           slidesPerView={1}
-          centeredSlides={false}
           loop={true}
-          autoplay={{
-            delay: 4000,
-            disableOnInteraction: false,
-          }}
-          pagination={{
-            clickable: true,
-            dynamicBullets: true,
-          }}
+          speed={500}
+          pagination={{ clickable: true, dynamicBullets: true }}
           breakpoints={{
-            640: { slidesPerView: 2, centeredSlides: false, spaceBetween: 20 },
-            1024: { slidesPerView: 3, centeredSlides: false, spaceBetween: 30 },
-            1280: { slidesPerView: 4, centeredSlides: false, spaceBetween: 30 },
+            640: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+            1280: { slidesPerView: 4 }
           }}
-          className="destinations-swiper !pb-16"
+          className="destinations-swiper !pb-14"
         >
-          {destinationsData.map((dest) => (
-            <SwiperSlide key={dest.id}>
-              <motion.div
-                whileHover={{ y: -10 }}
-                className="relative group h-[450px] rounded-3xl overflow-hidden shadow-xl bg-white"
-              >
-                {/* Image */}
+          {destinationsData.map((dest, index) => (
+            <SwiperSlide key={dest.id || index}>
+              <div className="relative group h-[420px] rounded-[2rem] overflow-hidden bg-slate-200 transform-gpu shadow-sm hover:shadow-xl transition-all duration-500">
+                
+                {/* Critical Fix: fetchPriority for LCP */}
                 <img
                   src={dest.image}
                   alt={dest.name}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading={index < 4 ? "eager" : "lazy"}
+                  decoding="async"
+                  fetchPriority={index < 4 ? "high" : "low"} 
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 transform-gpu"
                 />
-                
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity" />
 
-                {/* Content */}
-                <div className="absolute bottom-0 left-0 w-full p-8 text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                  <div className="flex justify-between items-start mb-4">
-                    <div>
-                      <div className="flex items-center gap-1 text-slate-300 mb-2">
-                        <MapPin size={14} className="text-[#f2ca1c]" />
-                        <span className="text-xs font-bold uppercase tracking-widest">{dest.location}</span>
-                      </div>
-                      <h3 className="text-2xl font-bold capitalize">{dest.name}</h3>
-                    </div>
-                    <div className="bg-white/20 backdrop-blur-md px-3 py-1 rounded-full flex items-center gap-1">
-                      <Star size={14} className="text-yellow-400 fill-yellow-400" />
-                      <span className="text-sm font-bold">{dest.rating}</span>
-                    </div>
+                {/* Overlay - Gradient is faster than Blur/Filters */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+
+                <div className="absolute bottom-0 left-0 w-full p-6">
+                  <div className="flex items-center gap-1.5 text-[#f2ca1c] text-[10px] font-bold uppercase mb-2">
+                    <MapPin size={12} /> {dest.location}
                   </div>
                   
-                  <div className="flex justify-between items-center border-t border-white/20 pt-6 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                  <h3 className="text-2xl font-bold text-white mb-4">{dest.name}</h3>
+
+                  {/* Price & Button - Won't slow down LCP */}
+                  <div className="flex justify-between items-center pt-4 border-t border-white/10">
                     <div>
-                      <p className="text-white/80 text-xs uppercase tracking-wider mb-1">Starting from</p>
+                      <p className="text-white/60 text-[10px] uppercase tracking-wider">Starting from</p>
                       <p className="text-xl font-bold text-[#f2ca1c]">{dest.price}</p>
                     </div>
-                    <button className="bg-[#f2ca1c] text-slate-900 p-3 rounded-full hover:bg-[#31468e] hover:text-white transition-all transform hover:scale-110 shadow-lg">
+                    <button className="bg-[#f2ca1c] text-[#31468e] p-3 rounded-full hover:bg-white transition-all transform hover:scale-110 active:scale-90 shadow-lg">
                       <ArrowRight size={20} />
                     </button>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             </SwiperSlide>
           ))}
         </Swiper>
       </div>
+
+      <style dangerouslySetInnerHTML={{ __html: `
+        .destinations-swiper .swiper-pagination-bullet-active { background: #31468e !important; width: 26px !important; border-radius: 10px !important; }
+      `}} />
     </section>
   );
 };

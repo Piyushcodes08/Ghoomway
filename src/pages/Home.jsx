@@ -1,7 +1,10 @@
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
-import CabBooking from "../components/CabBooking";
+import { useRef, Suspense, lazy } from "react";
 import heroBg from "../assets/bg-hero.webp";
+
+// Performance Optimization: CabBooking ko lazy load karein taaki 
+// main page load hone tak JS block na ho (TBT fix)
+const CabBooking = lazy(() => import("../components/CabBooking"));
 
 const Home = () => {
   const bookingRef = useRef(null);
@@ -14,18 +17,27 @@ const Home = () => {
 
   return (
     <div className="bg-white">
-      {/* Hero Section */}
-      <section className="relative min-h-screen w-full overflow-hidden flex items-center pt-12">
+      {/* Hero Section - Explicit height to prevent Layout Shift */}
+      <section className="relative min-h-[100svh] w-full overflow-hidden flex items-center pt-12 bg-slate-900">
+        
+        {/* Optimized Hero Image */}
         <img
           src={heroBg}
           alt="GhoomWay mountain travel background"
-          fetchPriority="high"
-          className="absolute inset-0 h-full w-full object-cover"
+          // Critical for LCP: Priority high aur eager loading
+          fetchPriority="high" 
+          loading="eager"      
+          decoding="sync"
+          // Dimensions provide aspect-ratio for the browser
+          width="1920"
+          height="1080"
+          className="absolute inset-0 h-full w-full object-cover pointer-events-none"
         />
 
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/60 to-slate-900/20" />
+        {/* Gradient Overlay - Z-index fixed for better paint performance */}
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/60 to-slate-900/20 z-[1]" />
 
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-[15px] md:px-6 pt-10 lg:pt-12">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 md:px-6 pt-10 lg:pt-12">
           <div className="max-w-xl md:max-w-2xl lg:max-w-3xl">
             <span className="inline-block px-4 py-1 mb-6 text-sm font-bold tracking-[0.2em] text-[#f2ca1c] uppercase bg-[#f2ca1c]/10 rounded-full border border-[#f2ca1c]/20">
               All India Travel Partner
@@ -60,20 +72,22 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Booking Trigger Area */}
+      {/* Booking Section with Suspense for better TBT */}
       <section
         id="booking"
         ref={bookingRef}
-        className="relative z-20 -mt-8 sm:-mt-12 md:-mt-16 lg:-mt-20 px-4 sm:px-6 lg:px-8"
+        className="relative z-20 -mt-8 sm:-mt-12 md:-mt-16 lg:-mt-20 px-4 sm:px-6 lg:px-8 min-h-[400px]"
       >
-        <motion.div
-          initial={{ opacity: 0, y: 80 }}
-          animate={isBookingInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 80 }}
-          transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-          className="mx-auto flex w-full max-w-6xl justify-center"
-        >
-          <CabBooking />
-        </motion.div>
+        <Suspense fallback={<div className="h-40 w-full bg-gray-100 animate-pulse rounded-xl" />}>
+          <motion.div
+            initial={{ opacity: 0, y: 40 }} // Reduced y offset for smoother paint
+            animate={isBookingInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="mx-auto flex w-full max-w-6xl justify-center"
+          >
+            <CabBooking />
+          </motion.div>
+        </Suspense>
       </section>
     </div>
   );

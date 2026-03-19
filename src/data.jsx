@@ -8,14 +8,18 @@ import {
 // ==========================
 // Image Assets Imports
 // ==========================
-import imgJas from "./assets/jaselmair.webp";
-import imgTemple1 from "./assets/temple.webp";
-import imgRoundTrip from "./assets/round-trip.webp";
-import imgSoloTrip from "./assets/solo-trip.webp";
-import imgTemple2 from "./assets/temple2.webp";
-import imgTaxi from "./assets/taxi.webp";
-import imgAirport from "./assets/aitport.webp";
-import imgPremiumService from "./assets/service (1).webp";
+import img1 from './assets/img1.webp';
+import img2 from './assets/img2.webp';
+import img3 from './assets/img3.webp';
+import img4 from './assets/img4.webp';
+// import img1 from "./assets/img1.webp";
+// import img2 from "./assets/img2.webp";
+// import img3 from "./assets/img3.webp";
+// import img4 from "./assets/img4.webp";
+// import img1 from "./assets/img1.webp";
+// import img2 from "./assets/img2.webp";
+// import img3 from "./assets/img3.webp";
+// import img4 from "./assets/img4.webp";
 
 // ==========================
 // Theme Colors
@@ -28,17 +32,17 @@ export const themeColors = {
 // ==========================
 // 1. Header Nav Links
 // ==========================
-export const navLinks = ["home", "about", "destinations", "services", "gallery", "contact"];
+export const navLinks = ["about", "destinations", "services", "gallery", "contact"];
 
 // ==========================
 // 2. Destinations Data
 // ==========================
 export const destinationsData = [
-  { id: 1, name: "Jaisalmer", location: "Rajasthan", rating: 4.9, image: imgJas, price: "₹4,500" },
-  { id: 2, name: "Golden Temple", location: "Amritsar", rating: 5.0, image: imgTemple1, price: "₹3,200" },
-  { id: 3, name: "abu road", location: "rajasthan", rating: 4.8, image: imgRoundTrip, price: "₹3,800" },
-  { id: 4, name: "golden Goa", location: "Goa", rating: 4.7, image: imgSoloTrip, price: "₹8,500" },
-  { id: 5, name: "dwarka", location: "somnath temple", rating: 4.9, image: imgTemple2, price: "₹4,000" },
+  { id: 1, name: "Jaisalmer", location: "Rajasthan", rating: 4.9, image: img1, price: "₹4,500" },
+  { id: 2, name: "Golden Temple", location: "Amritsar", rating: 5.0, image: img2, price: "₹3,200" },
+  { id: 3, name: "abu road", location: "rajasthan", rating: 4.8, image: img3, price: "₹3,800" },
+  { id: 4, name: "golden Goa", location: "Goa", rating: 4.7, image: img4, price: "₹8,500" },
+  { id: 5, name: "dwarka", location: "somnath temple", rating: 4.9, image: img1, price: "₹4,000" },
 ];
 
 // ==========================
@@ -60,12 +64,12 @@ export const aboutValues = [
 // 4. Services Data
 // ==========================
 export const servicesData = [
-  { title: "City Rides", image: imgTaxi, icon: Car, buttonColor: "hover:bg-[#31468e]" },
-  { title: "Airport Transfers", image: imgAirport, icon: Plane, buttonColor: "hover:bg-sky-500" },
-  { title: "Outstation Trips", image: imgRoundTrip, icon: Map, buttonColor: "hover:bg-emerald-500" },
-  { title: "Corporate Travel", image: imgSoloTrip, icon: Briefcase, buttonColor: "hover:bg-slate-700" },
-  { title: "Luxury Rentals", image: imgPremiumService, icon: Sparkles, buttonColor: "hover:bg-amber-500" },
-  { title: "Heritage Tours", image: imgTemple2, icon: ShieldCheck, buttonColor: "hover:bg-rose-500" },
+  { title: "City Rides", image: img1, icon: Car, buttonColor: "hover:bg-[#31468e]" },
+  { title: "Airport Transfers", image: img2, icon: Plane, buttonColor: "hover:bg-sky-500" },
+  { title: "Outstation Trips", image: img3, icon: Map, buttonColor: "hover:bg-emerald-500" },
+  { title: "Corporate Travel", image: img3, icon: Briefcase, buttonColor: "hover:bg-slate-700" },
+  { title: "Luxury Rentals", image: img4, icon: Sparkles, buttonColor: "hover:bg-amber-500" },
+  { title: "Heritage Tours", image: img1, icon: ShieldCheck, buttonColor: "hover:bg-rose-500" },
 ];
 
 // ==========================
@@ -87,14 +91,14 @@ export const localOptions = [
 // 6. Gallery Data
 // ==========================
 export const galleryImages = [
-  { id: 1, src: imgJas, title: "Golden Sands", category: "Nature" },
-  { id: 2, src: imgTemple1, title: "Ancient Spirits", category: "Heritage" },
-  { id: 3, src: imgRoundTrip, title: "Open Roads", category: "Adventure" },
-  { id: 4, src: imgSoloTrip, title: "Solo Explorer", category: "Personal" },
-  { id: 5, src: imgTemple2, title: "Temple Peace", category: "Heritage" },
-  { id: 6, src: imgTaxi, title: "Smart City", category: "Business" },
-  { id: 7, src: imgAirport, title: "Travel High", category: "Airport" },
-  { id: 8, src: imgPremiumService, title: "Premium Service", category: "Luxury" },
+  { id: 1, src: img1, title: "Golden Sands", category: "Nature" },
+  { id: 2, src: img2, title: "Ancient Spirits", category: "Heritage" },
+  { id: 3, src: img3, title: "Open Roads", category: "Adventure" },
+  { id: 4, src: img4, title: "Solo Explorer", category: "Personal" },
+  { id: 5, src: img1, title: "Temple Peace", category: "Heritage" },
+  { id: 6, src: img2, title: "Smart City", category: "Business" },
+  { id: 7, src: img3, title: "Travel High", category: "Airport" },
+  { id: 8, src: img4, title: "Premium Service", category: "Luxury" },
 ];
 
 // ==========================
