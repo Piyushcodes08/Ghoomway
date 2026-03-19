@@ -2,16 +2,15 @@ import { motion } from "framer-motion";
 import { servicesData } from "../data";
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: (i) => ({
+  hidden: { opacity: 0, y: 24 },
+  visible: {
     opacity: 1,
     y: 0,
     transition: {
-      delay: i * 0.08,
-      duration: 0.55,
+      duration: 0.45,
       ease: "easeOut",
     },
-  }),
+  },
 };
 
 export default function Services() {
@@ -66,7 +65,7 @@ export default function Services() {
                 <img
                   src={service.image}
                   alt={service.title}
-                  className="h-full w-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[3px] group-hover:brightness-50"
+                  className="h-full w-full object-cover transition-all duration-300 group-hover:scale-105  group-hover:brightness-50"
                 />
 
                 {/* Overlay */}

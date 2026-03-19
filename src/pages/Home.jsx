@@ -1,7 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import CabBooking from "../components/CabBooking";
-import heroBg from "../assets/jaselmair.jpg";
+import heroBg from "../assets/bg-hero.jpg";
 
 const Home = () => {
   const triggerRef = useRef(null);
