@@ -8,14 +8,14 @@ import {
 // ==========================
 // Image Assets Imports
 // ==========================
-import imgJas from "./assets/jaselmair.jpg";
-import imgTemple1 from "./assets/temple.jpg";
-import imgRoundTrip from "./assets/round-trip.jpg";
-import imgSoloTrip from "./assets/solo-trip.jpg";
-import imgTemple2 from "./assets/temple2.jpg";
-import imgTaxi from "./assets/taxi.jpg";
-import imgAirport from "./assets/aitport.jpg";
-import imgPremiumService from "./assets/service (1).jpg";
+import imgJas from "./assets/jaselmair.webp";
+import imgTemple1 from "./assets/temple.webp";
+import imgRoundTrip from "./assets/round-trip.webp";
+import imgSoloTrip from "./assets/solo-trip.webp";
+import imgTemple2 from "./assets/temple2.webp";
+import imgTaxi from "./assets/taxi.webp";
+import imgAirport from "./assets/aitport.webp";
+import imgPremiumService from "./assets/service (1).webp";
 
 // ==========================
 // Theme Colors
@@ -36,9 +36,9 @@ export const navLinks = ["home", "about", "destinations", "services", "gallery",
 export const destinationsData = [
   { id: 1, name: "Jaisalmer", location: "Rajasthan", rating: 4.9, image: imgJas, price: "₹4,500" },
   { id: 2, name: "Golden Temple", location: "Amritsar", rating: 5.0, image: imgTemple1, price: "₹3,200" },
-  { id: 3, name: "Mountain Retreat", location: "Himachal", rating: 4.8, image: imgRoundTrip, price: "₹5,800" },
-  { id: 4, name: "Coastal Drive", location: "Goa", rating: 4.7, image: imgSoloTrip, price: "₹6,500" },
-  { id: 5, name: "Heritage Tour", location: "Varanasi", rating: 4.9, image: imgTemple2, price: "₹4,000" },
+  { id: 3, name: "abu road", location: "rajasthan", rating: 4.8, image: imgRoundTrip, price: "₹3,800" },
+  { id: 4, name: "golden Goa", location: "Goa", rating: 4.7, image: imgSoloTrip, price: "₹8,500" },
+  { id: 5, name: "dwarka", location: "somnath temple", rating: 4.9, image: imgTemple2, price: "₹4,000" },
 ];
 
 // ==========================

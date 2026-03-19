@@ -86,7 +86,7 @@ const Destinations = () => {
                         <MapPin size={14} className="text-[#f2ca1c]" />
                         <span className="text-xs font-bold uppercase tracking-widest">{dest.location}</span>
                       </div>
-                      <h3 className="text-2xl font-bold">{dest.name}</h3>
+                      <h3 className="text-2xl font-bold capitalize">{dest.name}</h3>
                     </div>
                     <div className="bg-white/20 backdrop-blur-md px-3 py-1 rounded-full flex items-center gap-1">
                       <Star size={14} className="text-yellow-400 fill-yellow-400" />

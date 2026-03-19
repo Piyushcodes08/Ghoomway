@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import clsx from "clsx";
-import flag from "../assets/Flag_of_India.svg.png";
-import logo from "../assets/logo.png";
+import flag from "../assets/Flag_of_India.svg.webp";
+import logo from "../assets/logo.webp";
 import { Plus } from "lucide-react";
 import { navLinks } from "../data";
 
