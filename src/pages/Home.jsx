@@ -15,7 +15,7 @@ const Home = () => {
     <div className="bg-white">
       {/* Static Hero Section */}
       <section 
-        className="relative w-full flex items-center bg-cover bg-center pb-50 pt-20"
+        className="relative w-full flex items-center bg-cover bg-center pb-50 pt-12"
         style={{
           backgroundImage: `linear-gradient(to right, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.6) 50%, rgba(15, 23, 42, 0.2) 100%), url(${heroBg})`,
         }}

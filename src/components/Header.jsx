@@ -28,7 +28,7 @@ export default function Header() {
     <header
       className={clsx(
         "fixed top-0 left-0 w-full py-2 transition-all duration-500 font-poppins z-50",
-        scrolled ? "bg-white" : "bg-transparent"
+        scrolled ? "bg-black/70" : "bg-transparent"
       )}
     >
       <div className="max-w-7xl mx-auto md:px-6 h-16 px-2 flex items-center justify-between">
