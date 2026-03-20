@@ -42,7 +42,7 @@ export default function Header() {
       >
         <div className="max-w-7xl mx-auto md:px-6 h-16 px-4 flex items-center justify-between">
           
-         <a className="flex items-center" href="#home" onClick={() => setMenuOpen(false)}>
+         <Link className="flex items-center" to="/" onClick={() => setMenuOpen(false)}>
   <img 
     src={logo} 
     alt="Ghoomway Logo" 
@@ -52,7 +52,7 @@ export default function Header() {
     decoding="async"
     className={clsx("w-20 md:w-24 h-auto transition-all", scrolled || menuOpen ? "brightness-100" : "brightness-100")}
   />
-</a>
+</Link>
 
           <div className="flex items-center gap-3">
             <button className="text-sm border-none rounded-xl px-4 py-2 font-bold inline-flex items-center gap-2 bg-white text-black hover:bg-[#f2ca1c] transition-colors shadow-sm">

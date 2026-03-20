@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import { MapPin, ArrowRight } from "lucide-react";
@@ -65,9 +66,9 @@ const Destinations = () => {
                       <p className="text-white/60 text-[10px] uppercase tracking-wider">Starting from</p>
                       <p className="text-xl font-bold text-[#f2ca1c]">{dest.price}</p>
                     </div>
-                    <button className="bg-[#f2ca1c] text-[#31468e] p-3 rounded-full hover:bg-white transition-all transform hover:scale-110 active:scale-90 shadow-lg">
+                    <Link to="/destinations" className="bg-[#f2ca1c] text-[#31468e] p-3 rounded-full hover:bg-white transition-all transform hover:scale-110 active:scale-90 shadow-lg block">
                       <ArrowRight size={20} />
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>

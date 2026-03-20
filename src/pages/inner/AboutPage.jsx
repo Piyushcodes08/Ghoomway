@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Users, Globe, Award, ShieldCheck, Target, Eye, Quote, ChevronRight, CheckCircle2 } from "lucide-react";
+import { Users, Globe, Award, ShieldCheck, Target, Eye, Quote, ChevronRight, CheckCircle2, Smartphone } from "lucide-react";
 import heroImg from "../../assets/about img.webp";
 import img1 from "../../assets/img1.webp";
 import img2 from "../../assets/img2.webp";
@@ -219,7 +219,37 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 6. Call to Action */}
+      {/* 6. Digital Future / App Coming Soon */}
+      <section className="py-20 bg-slate-50 border-y border-slate-200 overflow-hidden relative">
+         <div className="absolute top-1/2 right-10 -translate-y-1/2 w-[600px] h-[600px] bg-[#31468e]/5 rounded-full blur-[80px]" />
+         <div className="max-w-7xl mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+               <div className="w-14 h-14 bg-[#31468e] rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-[#31468e]/30">
+                  <Smartphone className="w-7 h-7 text-[#f2ca1c]" />
+               </div>
+               <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-6">The Future is <span className="text-[#31468e]">Digital</span></h2>
+               <p className="text-lg text-slate-600 mb-6 leading-relaxed">
+                  We are accelerating our timeline to bring the entire Ghoomway experience to your fingertips. Our upcoming mobile application is currently in closed beta and will revolutionize how you book, track, and manage your intercity travel.
+               </p>
+               <div className="inline-flex items-center gap-3 px-5 py-3 rounded-full bg-white border border-slate-200 shadow-sm text-sm font-bold text-slate-700">
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#f2ca1c] animate-pulse" /> Launching Q3 2026
+               </div>
+            </div>
+            
+            <div className="relative aspect-square md:aspect-[4/3] w-full rounded-[3rem] bg-gradient-to-br from-[#31468e] to-slate-900 p-8 shadow-2xl flex items-center justify-center overflow-hidden">
+               {/* Mockup visual */}
+               <div className="w-64 h-[500px] bg-slate-900 rounded-[2.5rem] border-8 border-slate-800 shadow-2xl relative translate-y-12 shrink-0 flex flex-col items-center pt-8 overflow-hidden z-10">
+                  <div className="w-20 h-1.5 bg-slate-700 rounded-full mb-8" />
+                  <div className="w-16 h-16 bg-[#f2ca1c] shadow-[0_0_30px_rgba(242,202,28,0.5)] rounded-2xl mb-6 border border-white/20" />
+                  <div className="text-xl font-black text-white mb-2 tracking-tight">GhoomWay</div>
+                  <div className="text-xs text-slate-400 uppercase tracking-widest font-bold mt-12 bg-slate-800 px-4 py-2 rounded-full border border-slate-700">Driver Arriving...</div>
+               </div>
+               <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:20px_20px]" />
+            </div>
+         </div>
+      </section>
+
+      {/* 7. Call to Action */}
       <section className="py-24 bg-white">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <motion.div 

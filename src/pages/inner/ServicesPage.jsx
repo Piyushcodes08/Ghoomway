@@ -10,7 +10,7 @@ export default function ServicesPage() {
   return (
     <div className="bg-slate-50 min-h-screen">
       {/* 1. Services Hero */}
-      <section className="relative h-[65vh] min-h-[500px] flex items-center justify-start overflow-hidden pt-20">
+      <section className="relative h-screen flex items-center justify-start overflow-hidden pt-20">
         <img 
           src={img3} 
           alt="Ghoomway Premium Services" 

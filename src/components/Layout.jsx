@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import { Suspense, lazy } from "react";
 import Header from "./Header";
+import AppNotice from "./AppNotice";
 
 const Footer = lazy(() => import("./Footer"));
 
@@ -16,6 +17,7 @@ const Layout = () => {
       <Suspense fallback={<div className="h-24 bg-slate-900" />}>
         <Footer />
       </Suspense>
+      <AppNotice />
     </>
   );
 };

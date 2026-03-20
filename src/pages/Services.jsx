@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { servicesData } from "../data";
 
 export default function Services() {
@@ -64,9 +65,9 @@ export default function Services() {
 
               {/* Industry Style Button */}
               <div className="absolute bottom-6 left-0 right-0 px-8 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-150">
-                <button className="w-full py-4 bg-white text-[#31468e] font-black rounded-2xl shadow-xl hover:bg-[#f2ca1c] hover:text-[#31468e] transition-colors uppercase tracking-widest text-xs">
+                <Link to="/services" className="block text-center w-full py-4 bg-white text-[#31468e] font-black rounded-2xl shadow-xl hover:bg-[#f2ca1c] hover:text-[#31468e] transition-colors uppercase tracking-widest text-xs">
                   Book {service.title}
-                </button>
+                </Link>
               </div>
             </div>
           ))}

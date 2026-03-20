@@ -1,5 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, Suspense, lazy } from "react";
+import { Link } from "react-router-dom";
 import heroBg from "../assets/bg-hero.webp";
 
 // Performance Optimization: CabBooking ko lazy load karein taaki 
@@ -59,12 +60,12 @@ const Home = () => {
                 Book Now
               </a>
 
-              <a
-                href="#services"
+              <Link
+                to="/services"
                 className="inline-flex items-center justify-center rounded-lg border border-white px-6 py-3 text-lg font-semibold text-white transition-all duration-300 hover:border-[#f2ca1c] hover:bg-[#f2ca1c] hover:text-black"
               >
                 Learn More
-              </a>
+              </Link>
             </div>
           </div>
         </div>

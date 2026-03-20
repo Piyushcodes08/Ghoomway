@@ -42,7 +42,7 @@ export default function DestinationsPage() {
   return (
     <div className="bg-slate-50 min-h-screen">
       {/* 1. Impact Hero */}
-      <section className="relative h-[70vh] min-h-[550px] flex items-center justify-start overflow-hidden pt-20">
+      <section className="relative h-screen flex items-center justify-start overflow-hidden pt-20">
         <img 
           src={destinationsData[0]?.image || heroImg} 
           alt="Explore India with Ghoomway" 
