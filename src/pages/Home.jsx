@@ -1,7 +1,8 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, Suspense, lazy } from "react";
 import { Link } from "react-router-dom";
-import heroBg from "../assets/bg-hero.webp";
+import heroBg from "/bg-hero.webp";
+
 
 // Performance Optimization: CabBooking ko lazy load karein taaki 
 // main page load hone tak JS block na ho (TBT fix)

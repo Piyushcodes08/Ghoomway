@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { MapPin, Star, ArrowRight, Compass, Clock, Map as MapIcon, Calendar, CheckCircle2 } from "lucide-react";
-import heroImg from "../../assets/bg-hero.webp";
+
 import img4 from "../../assets/img4.webp";
 import { destinationsData, popularCities } from "../../data";
 
@@ -44,7 +44,7 @@ export default function DestinationsPage() {
       {/* 1. Impact Hero */}
       <section className="relative h-screen flex items-center justify-start overflow-hidden pt-20">
         <img 
-          src={destinationsData[0]?.image || heroImg} 
+          src="/bg-hero.webp" 
           alt="Explore India with Ghoomway" 
           className="absolute inset-0 w-full h-full object-cover scale-105"
           loading="eager"

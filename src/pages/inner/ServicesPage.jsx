@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Car, Plane, Briefcase, Map, ShieldCheck, CheckCircle2, Navigation, Clock, Building2, Battery } from "lucide-react";
-import heroImg from "../../assets/bg-hero.webp";
+
 import img3 from "../../assets/img3.webp";
 import img4 from "../../assets/img4.webp";
 import img1 from "../../assets/img1.webp";
@@ -12,7 +12,7 @@ export default function ServicesPage() {
       {/* 1. Services Hero */}
       <section className="relative h-screen flex items-center justify-start overflow-hidden pt-20">
         <img 
-          src={img3} 
+          src="/bg-hero.webp" 
           alt="Ghoomway Premium Services" 
           className="absolute inset-0 w-full h-full object-cover grayscale-[30%]"
           loading="eager"

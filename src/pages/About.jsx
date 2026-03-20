@@ -1,8 +1,5 @@
-import React from "react";
 import { motion } from "framer-motion";
-import { Gamepad2 } from "lucide-react";
 import cinematicBg from "../assets/about img.webp";
-import CarGame from "../components/CarGame";
 import { aboutStats, aboutValues } from "../data";
 
 const About = () => {
@@ -79,39 +76,6 @@ const About = () => {
             </div>
           </motion.div>
         </div>
-
-        {/* Game Section */}
-        {/* <div className="mb-16 md:mb-24 mt-16 md:mt-24 -mx-[15px] md:mx-0 w-[calc(100%+30px)] md:w-full">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.97 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="w-full bg-slate-50 rounded-none md:rounded-[2rem] pt-8 pb-0 md:p-10 border-y md:border border-slate-200 shadow-sm overflow-hidden"
-          >
-            <div className="flex flex-col md:flex-row items-center gap-6 md:gap-12">
-
-              <div className="md:w-1/3 px-[15px] md:px-0">
-                <div className="bg-[#31468e] w-14 h-14 rounded-xl flex items-center justify-center mb-5 shadow-md">
-                  <Gamepad2 className="text-[#f2ca1c] w-7 h-7" />
-                </div>
-
-                <h3 className="text-2xl font-black text-slate-900 mb-3">
-                  Interactive <span className="text-[#31468e]">Lounge</span>
-                </h3>
-
-                <p className="text-slate-600 mb-5 text-sm leading-relaxed">
-                  Enjoy our custom mini-game while we handle your journey.
-                </p>
-              </div>
-
-              <div className="md:w-2/3 w-full">
-                <CarGame />
-              </div>
-            </div>
-          </motion.div>
-        </div> */}
-
         {/* Stats Section */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
