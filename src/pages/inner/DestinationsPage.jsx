@@ -13,7 +13,7 @@ const featuredRoutes = [
     distance: "720 KMS",
     route: "Delhi → Agra → Jaipur → Delhi",
     highlights: ["Taj Mahal Sunrise Visit", "Amer Fort Elephant Ride", "Fatehpur Sikri Stop", "Highway Dhabha Experience"],
-    image: destinationsData[0]?.image || heroImg,
+    image: destinationsData[0]?.image || "/bg-hero.webp",
     price: "₹18,500"
   },
   {
@@ -23,7 +23,7 @@ const featuredRoutes = [
     distance: "550 KMS",
     route: "Chandigarh → Shimla → Manali",
     highlights: ["Rohtang Pass Snow Drive", "Solang Valley Logistics", "Mall Road Dropoffs", "Hill-Driving Experts"],
-    image: destinationsData[1]?.image || heroImg,
+    image: destinationsData[1]?.image || "/bg-hero.webp",
     price: "₹24,000"
   },
   {

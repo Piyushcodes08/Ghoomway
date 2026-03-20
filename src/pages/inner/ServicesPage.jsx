@@ -183,7 +183,7 @@ export default function ServicesPage() {
 
           <div className="relative">
             <div className="aspect-square rounded-[3rem] overflow-hidden border-8 border-slate-800">
-              <img src={heroImg} alt="Corporate Needs" className="w-full h-full object-cover" />
+              <img src="/bg-hero.webp" alt="Corporate Needs" className="w-full h-full object-cover" />
             </div>
             {/* Overlay Stat block */}
              <div className="absolute -bottom-8 -left-8 bg-white text-slate-900 rounded-[2rem] p-8 shadow-2xl z-10 hidden sm:block">
