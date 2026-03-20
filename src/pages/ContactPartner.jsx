@@ -120,8 +120,8 @@ const ContactPartner = () => {
 
                 <div className="space-y-1.5">
                   <label className="block text-slate-500 text-[10px] font-black uppercase tracking-widest ml-1">Vehicle Details</label>
-                  <select className="w-full bg-slate-50 border border-slate-200 rounded-xl px-5 py-4 text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#31468e] transition-all font-medium appearance-none">
-                    <option value="" disabled selected>Select Vehicle Type</option>
+                  <select defaultValue="" className="w-full bg-slate-50 border border-slate-200 rounded-xl px-5 py-4 text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#31468e] transition-all font-medium appearance-none">
+                    <option value="" disabled>Select Vehicle Type</option>
                     <option value="sedan">Sedan (Dzire, Etios, etc.)</option>
                     <option value="suv">SUV (Innova, Ertiga, etc.)</option>
                     <option value="luxury">Luxury (Fortuner, Camry, etc.)</option>
