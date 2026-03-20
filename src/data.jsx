@@ -32,7 +32,7 @@ export const themeColors = {
 // ==========================
 // 1. Header Nav Links
 // ==========================
-export const navLinks = ["about", "destinations", "services", "gallery", "contact"];
+export const navLinks = ["about", "destinations", "services", "contact"];
 
 // ==========================
 // 2. Destinations Data
@@ -122,11 +122,11 @@ export const popularAttractions = [
 // 8. Footer Data
 // ==========================
 export const footerQuickLinks = [
-  { name: "Home", href: "#home" },
-  { name: "About Us", href: "#about" },
-  { name: "Destinations", href: "#destinations" },
-  { name: "Our Services", href: "#services" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", href: "/" },
+  { name: "About Us", href: "/about" },
+  { name: "Destinations", href: "/destinations" },
+  { name: "Our Services", href: "/services" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export const footerSocialLinks = [

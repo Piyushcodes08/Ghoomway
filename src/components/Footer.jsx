@@ -4,6 +4,7 @@ import {
   ArrowRight,
   Heart
 } from "lucide-react";
+import { Link } from "react-router-dom";
 import { footerQuickLinks, footerSocialLinks } from "../data";
 
 const Footer = () => {
@@ -47,13 +48,13 @@ const Footer = () => {
             <ul className="space-y-4">
               {footerQuickLinks.map((link, index) => (
                 <li key={index}>
-                  <a 
-                    href={link.href} 
+                  <Link 
+                    to={link.href} 
                     className="group text-slate-400 hover:text-white transition-colors flex items-center gap-2 text-sm"
                   >
                     <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all" />
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

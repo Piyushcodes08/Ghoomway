@@ -1,57 +1,25 @@
-import { Suspense, lazy } from "react";
+import { Routes, Route } from "react-router-dom";
+import { lazy } from "react";
 import "./index.css";
-import Header from "./components/Header";
-import Home from "./pages/Home";
+import Layout from "./components/Layout";
+import LandingPage from "./pages/LandingPage";
 
-const About = lazy(() => import("./pages/About"));
-const Services = lazy(() => import("./pages/Services"));
-const Destinations = lazy(() => import("./pages/Destinations"));
-const Features = lazy(() => import("./pages/Features"));
-const PopularSearch = lazy(() => import("./pages/PopularSearch"));
-const Gallery = lazy(() => import("./pages/Gallery"));
-const ContactPartner = lazy(() => import("./pages/ContactPartner"));
-const Footer = lazy(() => import("./components/Footer"));
-
-const SectionFallback = () => <div className="h-24" />;
+const AboutPage = lazy(() => import("./pages/inner/AboutPage"));
+const ServicesPage = lazy(() => import("./pages/inner/ServicesPage"));
+const DestinationsPage = lazy(() => import("./pages/inner/DestinationsPage"));
+const ContactPage = lazy(() => import("./pages/inner/ContactPage"));
 
 const App = () => {
   return (
-    <>
-      <Header />
-      <Home />
-
-      <Suspense fallback={<SectionFallback />}>
-        <About />
-      </Suspense>
-
-      <Suspense fallback={<SectionFallback />}>
-        <Services />
-      </Suspense>
-
-      <Suspense fallback={<SectionFallback />}>
-        <Destinations />
-      </Suspense>
-
-      <Suspense fallback={<SectionFallback />}>
-        <Features />
-      </Suspense>
-
-      <Suspense fallback={<SectionFallback />}>
-        <PopularSearch />
-      </Suspense>
-
-      <Suspense fallback={<SectionFallback />}>
-        <Gallery />
-      </Suspense>
-
-      <Suspense fallback={<SectionFallback />}>
-        <ContactPartner />
-      </Suspense>
-
-      <Suspense fallback={<SectionFallback />}>
-        <Footer />
-      </Suspense>
-    </>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<LandingPage />} />
+        <Route path="about" element={<AboutPage />} />
+        <Route path="services" element={<ServicesPage />} />
+        <Route path="destinations" element={<DestinationsPage />} />
+        <Route path="contact" element={<ContactPage />} />
+      </Route>
+    </Routes>
   );
 };
 

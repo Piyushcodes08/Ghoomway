@@ -85,15 +85,15 @@ export default function Header() {
         <ul className="w-full max-w-4xl text-left sm:text-center space-y-4">
           {navLinks.map((item) => (
             <li key={item} className="group">
-              <a
-                href={item === "home" ? "/" : `#${item}`}
+              <Link
+                to={item === "home" ? "/" : `/${item}`}
                 onClick={() => setMenuOpen(false)}
                 className="relative inline-block w-full py-2 text-5xl sm:text-7xl font-black text-black capitalize transition-all duration-500 hover:text-[#31468e] hover:translate-x-4 sm:hover:translate-x-0"
               >
                 {item}
                 {/* Subtle Underline Effect */}
                 <span className="absolute bottom-0 left-0 w-0 h-1 bg-[#f2ca1c] transition-all duration-500 group-hover:w-full"></span>
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
