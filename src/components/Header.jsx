@@ -15,12 +15,21 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 80);
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  let ticking = false;
+
+  const handleScroll = () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        setScrolled(window.scrollY > 80);
+        ticking = false;
+      });
+      ticking = true;
+    }
+  };
+
+  window.addEventListener("scroll", handleScroll, { passive: true });
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
 
   return (
     <>
@@ -33,16 +42,17 @@ export default function Header() {
       >
         <div className="max-w-7xl mx-auto md:px-6 h-16 px-4 flex items-center justify-between">
           
-          <Link className="flex items-center" to="/" onClick={() => setMenuOpen(false)}>
-            <img 
-              src={logo} 
-              alt="Ghoomway Logo" 
-              width="100" 
-              height="40" 
-              fetchPriority="high" 
-              className={clsx("w-20 md:w-24 h-auto transition-all", scrolled || menuOpen ? "brightness-100" : "brightness-100")}
-            />
-          </Link>
+         <a className="flex items-center" href="#home" onClick={() => setMenuOpen(false)}>
+  <img 
+    src={logo} 
+    alt="Ghoomway Logo" 
+    width="100" 
+    height="40" 
+    loading="eager"
+    decoding="async"
+    className={clsx("w-20 md:w-24 h-auto transition-all", scrolled || menuOpen ? "brightness-100" : "brightness-100")}
+  />
+</a>
 
           <div className="flex items-center gap-3">
             <button className="text-sm border-none rounded-xl px-4 py-2 font-bold inline-flex items-center gap-2 bg-white text-black hover:bg-[#f2ca1c] transition-colors shadow-sm">

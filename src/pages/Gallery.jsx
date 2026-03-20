@@ -31,14 +31,18 @@ const Gallery = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+             transition={{ duration: 0.4, delay: Math.min(index * 0.04, 0.2) }}
               className="relative group h-48 sm:h-64 md:h-80 rounded-2xl md:rounded-3xl overflow-hidden shadow-xl"
             >
-              <img
-                src={image.src}
-                alt={image.title}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-              />
+             <img
+  src={image.src}
+  alt={image.title}
+  loading="lazy"
+  decoding="async"
+  width="600"
+  height="800"
+  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+/>
               
               {/* Overlay */}
               <div className="absolute inset-0 bg-[#31468e]/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">

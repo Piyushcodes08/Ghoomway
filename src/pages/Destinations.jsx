@@ -21,32 +21,33 @@ const Destinations = () => {
         </div>
 
         <Swiper
-          modules={[Pagination]}
-          spaceBetween={20}
-          slidesPerView={1}
-          loop={true}
-          speed={500}
-          pagination={{ clickable: true, dynamicBullets: true }}
-          breakpoints={{
-            640: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-            1280: { slidesPerView: 4 }
-          }}
-          className="destinations-swiper !pb-14"
-        >
+  modules={[Pagination]}
+  spaceBetween={20}
+  slidesPerView={1}
+  loop={false}
+  speed={400}
+  pagination={{ clickable: true, dynamicBullets: true }}
+  breakpoints={{
+    640: { slidesPerView: 2 },
+    1024: { slidesPerView: 3 },
+    1280: { slidesPerView: 4 }
+  }}
+  className="destinations-swiper !pb-14"
+>
           {destinationsData.map((dest, index) => (
             <SwiperSlide key={dest.id || index}>
               <div className="relative group h-[420px] rounded-[2rem] overflow-hidden bg-slate-200 transform-gpu shadow-sm hover:shadow-xl transition-all duration-500">
                 
                 {/* Critical Fix: fetchPriority for LCP */}
-                <img
-                  src={dest.image}
-                  alt={dest.name}
-                  loading={index < 4 ? "eager" : "lazy"}
-                  decoding="async"
-                  fetchPriority={index < 4 ? "high" : "low"} 
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 transform-gpu"
-                />
+               <img
+  src={dest.image}
+  alt={dest.name}
+  loading="lazy"
+  decoding="async"
+  width="500"
+  height="700"
+  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+/>
 
                 {/* Overlay - Gradient is faster than Blur/Filters */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />

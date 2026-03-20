@@ -21,21 +21,19 @@ const Home = () => {
       <section className="relative min-h-[100svh] w-full overflow-hidden flex items-center pt-12 bg-slate-900">
         
         {/* Optimized Hero Image */}
-        <img
-          src={heroBg}
-          alt="GhoomWay mountain travel background"
-          // Critical for LCP: Priority high aur eager loading
-          fetchPriority="high" 
-          loading="eager"      
-          decoding="sync"
-          // Dimensions provide aspect-ratio for the browser
-          width="1920"
-          height="1080"
-          className="absolute inset-0 h-full w-full object-cover pointer-events-none"
-        />
+      <img
+  src={heroBg}
+  alt="GhoomWay mountain travel background"
+  fetchPriority="high"
+  loading="eager"
+  decoding="async"
+  width="1920"
+  height="1080"
+  className="absolute inset-0 h-full w-full object-cover pointer-events-none"
+/>
 
         {/* Gradient Overlay - Z-index fixed for better paint performance */}
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/60 to-slate-900/20 z-[1]" />
+      <div className="absolute inset-0 bg-black/45 z-[1]" />
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 md:px-6 pt-10 lg:pt-12">
           <div className="max-w-xl md:max-w-2xl lg:max-w-3xl">
@@ -79,12 +77,13 @@ const Home = () => {
         className="relative z-20 -mt-8 sm:-mt-12 md:-mt-16 lg:-mt-20 px-4 sm:px-6 lg:px-8 min-h-[400px]"
       >
         <Suspense fallback={<div className="h-40 w-full bg-gray-100 animate-pulse rounded-xl" />}>
-          <motion.div
-            initial={{ opacity: 0, y: 40 }} // Reduced y offset for smoother paint
-            animate={isBookingInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-            className="mx-auto flex w-full max-w-6xl justify-center"
-          >
+       <motion.div
+  initial={{ opacity: 0, y: 24 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true, amount: 0.15 }}
+  transition={{ duration: 0.45, ease: "easeOut" }}
+  className="mx-auto flex w-full max-w-6xl justify-center"
+>
             <CabBooking />
           </motion.div>
         </Suspense>

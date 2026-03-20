@@ -22,10 +22,14 @@ const About = () => {
           >
             <div className="relative z-10 rounded-2xl overflow-hidden shadow-xl">
               <img
-                src={cinematicBg}
-                alt="Premium Travel Experience"
-                className="w-full h-[280px] md:h-[480px] object-cover transition-transform duration-500 hover:scale-105"
-              />
+  src={cinematicBg}
+  alt="Premium Travel Experience"
+  loading="lazy"
+  decoding="async"
+  width="800"
+  height="960"
+  className="w-full h-[280px] md:h-[480px] object-cover transition-transform duration-300 hover:scale-[1.03]"
+/>
 
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
 
@@ -77,7 +81,7 @@ const About = () => {
         </div>
 
         {/* Game Section */}
-        <div className="mb-16 md:mb-24 mt-16 md:mt-24 -mx-[15px] md:mx-0 w-[calc(100%+30px)] md:w-full">
+        {/* <div className="mb-16 md:mb-24 mt-16 md:mt-24 -mx-[15px] md:mx-0 w-[calc(100%+30px)] md:w-full">
           <motion.div
             initial={{ opacity: 0, scale: 0.97 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -106,7 +110,7 @@ const About = () => {
               </div>
             </div>
           </motion.div>
-        </div>
+        </div> */}
 
         {/* Stats Section */}
         <motion.div

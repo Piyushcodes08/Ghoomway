@@ -28,7 +28,7 @@ const features = [
   },
 ];
 
-const duplicatedFeatures = [...features, ...features];
+const featureList = features;
 
 const Features = () => {
   return (
@@ -77,69 +77,30 @@ const Features = () => {
           <div className="pointer-events-none absolute left-0 top-0 z-20 h-full w-20 md:w-32" />
           <div className="pointer-events-none absolute right-0 top-0 z-20 h-full w-20  md:w-32" />
 
-          <div className="overflow-hidden">
-            <motion.div
-              className="flex w-max gap-7 py-4"
-              animate={{ x: ["0%", "-50%"] }}
-              transition={{
-                duration: 24,
-                ease: "linear",
-                repeat: Infinity,
-              }}
-            >
-              {duplicatedFeatures.map((item, index) => {
-                const Icon = item.icon;
+         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+  {featureList.map((item, index) => {
+    const Icon = item.icon;
 
-                return (
-                  <motion.div
-                    key={index}
-                    whileHover={{ y: -10, scale: 1.015 }}
-                    transition={{ type: "spring", stiffness: 180, damping: 18 }}
-                    className="group/card relative min-h-[310px] w-[320px] sm:w-[360px] overflow-hidden rounded-[30px] border border-white/70 bg-white/70 p-8 shadow-[0_20px_60px_rgba(15,23,42,0.08)] backdrop-blur-xl"
-                  >
-                    {/* top glow */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-white/80 via-white/40 to-[#31468e]/[0.04]" />
-                    <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-[#f2ca1c]/15 blur-2xl transition-all duration-500 group-hover/card:scale-125" />
-                    <div className="absolute -left-10 bottom-0 h-28 w-28 rounded-full bg-[#31468e]/10 blur-2xl transition-all duration-500 group-hover/card:scale-125" />
+    return (
+      <div
+        key={index}
+        className="relative min-h-[280px] rounded-[30px] border border-slate-200 bg-white p-8 shadow-sm transition-transform duration-300 hover:-translate-y-2"
+      >
+        <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#31468e] text-white">
+          <Icon className="h-7 w-7" />
+        </div>
 
-                    {/* shine */}
-                    <div className="absolute inset-0 overflow-hidden rounded-[30px]">
-                      <div className="absolute left-[-120%] top-0 h-full w-[70%] rotate-12 bg-gradient-to-r from-transparent via-white/35 to-transparent transition-all duration-1000 group-hover/card:left-[130%]" />
-                    </div>
+        <h3 className="mb-4 text-2xl font-semibold tracking-tight text-[#31468e]">
+          {item.title}
+        </h3>
 
-                    <div className="relative z-10 flex h-full flex-col">
-                      <div className="mb-7 flex items-center justify-between">
-                        <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-[#31468e]/10 bg-gradient-to-br from-[#31468e] to-[#425cb8] text-white shadow-[0_12px_30px_rgba(49,70,142,0.28)]">
-                          <Icon className="h-7 w-7" />
-                        </div>
-
-                        <div className="rounded-full border border-[#f2ca1c]/30 bg-[#f2ca1c]/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#b48f00]">
-                          Premium
-                        </div>
-                      </div>
-
-                      <h3 className="mb-4 text-2xl font-semibold tracking-tight text-[#31468e]">
-                        {item.title}
-                      </h3>
-
-                      <p className="text-[15px] leading-8 text-slate-600">
-                        {item.description}
-                      </p>
-
-                      <div className="mt-auto pt-8">
-                        <div className="flex items-center gap-3">
-                          <div className="h-[3px] w-14 rounded-full bg-[#f2ca1c]" />
-                          <span className="text-sm font-medium text-[#31468e]">
-                            Crafted for better journeys
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </motion.div>
-          </div>
+        <p className="text-[15px] leading-7 text-slate-600">
+          {item.description}
+        </p>
+      </div>
+    );
+  })}
+</div>
         </div>
 
         {/* Bottom trust strip */}

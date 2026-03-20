@@ -31,15 +31,15 @@ export default function Services() {
               className="service-card group relative h-[320px] rounded-[2.5rem] overflow-hidden bg-slate-200 shadow-sm hover:shadow-2xl transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] transform-gpu hover:-translate-y-3"
             >
               {/* Image: Optimized with Aspect Ratio & GPU priority */}
-              <img
-                src={service.image}
-                alt={service.title}
-                loading={index < 3 ? "eager" : "lazy"}
-                decoding="async"
-                // @ts-ignore
-                fetchPriority={index < 3 ? "high" : "low"}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 transform-gpu will-change-transform"
-              />
+             <img
+  src={service.image}
+  alt={service.title}
+  loading="lazy"
+  decoding="async"
+  width="600"
+  height="640"
+  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 transform-gpu"
+/>
 
               {/* Advanced Gradient Overlay (Better than plain black/40) */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#31468e]/90 via-black/20 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-500" />
